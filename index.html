@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Curriculum Builder - Wireframes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;
+            line-height: 1.5;
+            color: #000;
+            background-color: #fff;
+            font-size: 13px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .wireframe {
+            background: #fff;
+            border: 1px solid #000;
+            margin: 40px 0;
+            padding: 30px;
+        }
+        
+        .wireframe h2 {
+            color: #000;
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #000;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .nav-pills {
+            display: flex;
+            gap: 0;
+            margin: 30px 0;
+            border: 1px solid #000;
+        }
+        
+        .nav-pill {
+            padding: 12px 20px;
+            border-right: 1px solid #000;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .nav-pill:last-child {
+            border-right: none;
+        }
+        
+        .nav-pill.active {
+            background: #000;
+            color: #fff;
+        }
+        
+        .nav-pill:hover {
+            background: #000;
+            color: #fff;
+        }
+        
+        .card {
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 20px 0;
+            background: #fff;
+        }
+        
+        .card h4 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .form-group {
+            margin: 20px 0;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #000;
+            font-family: inherit;
+            font-size: 11px;
+            background: #fff;
+            text-transform: uppercase;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            background: #f8f8f8;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border: 1px solid #000;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.2s ease;
+            background: #fff;
+            color: #000;
+        }
+        
+        .btn-primary {
+            background: #000;
+            color: #fff;
+        }
+        
+        .btn-primary:hover {
+            background: #333;
+        }
+        
+        .btn-secondary {
+            background: #666;
+            color: #fff;
+            border-color: #666;
+        }
+        
+        .btn-secondary:hover {
+            background: #333;
+        }
+        
+        .btn-success {
+            background: #000;
+            color: #fff;
+        }
+        
+        .btn-outline {
+            background: #fff;
+            border: 1px solid #000;
+            color: #000;
+        }
+        
+        .btn-outline:hover {
+            background: #000;
+            color: #fff;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 2px;
+            background: #fff;
+            border: 1px solid #000;
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: #000;
+            transition: width 0.3s ease;
+        }
+        
+        .sidebar {
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .sidebar h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+        
+        .sidebar li:last-child {
+            border-bottom: none;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            margin: 30px 0;
+            border: 1px solid #000;
+        }
+        
+        .stat-card {
+            background: #000;
+            color: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border-right: 1px solid #fff;
+        }
+        
+        .stat-card:last-child {
+            border-right: none;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .stat-card div:last-child {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .wizard-steps {
+            display: flex;
+            justify-content: space-between;
+            margin: 40px 0;
+            border: 1px solid #000;
+        }
+        
+        .wizard-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1;
+            padding: 20px;
+            border-right: 1px solid #000;
+            position: relative;
+        }
+        
+        .wizard-step:last-child {
+            border-right: none;
+        }
+        
+        .wizard-step.active {
+            background: #000;
+            color: #fff;
+        }
+        
+        .step-circle {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 10px;
+            font-size: 12px;
+        }
+        
+        .wizard-step.active .step-circle {
+            background: #fff;
+            color: #000;
+        }
+        
+        .wizard-step div:last-child {
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .ai-suggestions {
+            background: #0066CC;
+            color: #fff;
+            padding: 20px;
+            margin: 30px 0;
+            border: 3px solid #0066CC;
+            position: relative;
+        }
+        
+        .ai-suggestions h4 {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+        }
+        
+        .ai-suggestions ul {
+            list-style: none;
+        }
+        
+        .ai-suggestions li {
+            margin: 8px 0;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .template-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1px;
+            margin: 30px 0;
+            border: 1px solid #000;
+        }
+        
+        .template-card {
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 20px;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .template-card:hover {
+            background: #f8f8f8;
+        }
+        
+        .template-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+            font-size: 9px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .school-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #000;
+            color: #fff;
+            font-size: 9px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .program-type-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #666;
+            color: #fff;
+            font-size: 9px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .ai-feature {
+            background: #0066CC !important;
+            color: #fff !important;
+            border: 2px solid #0066CC !important;
+            position: relative;
+        }
+        
+        .ai-feature::before {
+            content: "AI";
+            position: absolute;
+            top: -8px;
+            left: 8px;
+            background: #0066CC;
+            color: #fff;
+            padding: 2px 6px;
+            font-size: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .ai-feature:hover {
+            background: #0052A3 !important;
+        }
+        
+        .ai-suggestions {
+            background: #0066CC;
+            color: #fff;
+            padding: 20px;
+            margin: 30px 0;
+            border: 3px solid #0066CC;
+            position: relative;
+        }
+        
+        .ai-suggestions::before {
+            content: "AI POWERED";
+            position: absolute;
+            top: -12px;
+            left: 20px;
+            background: #0066CC;
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .ai-highlight {
+            background: #0066CC !important;
+            color: #fff !important;
+            padding: 4px 8px;
+            font-size: 9px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #0066CC;
+            display: inline-block;
+        }
+        
+        .ai-indicator {
+            background: #0066CC;
+            color: #fff;
+            padding: 2px 6px;
+            font-size: 8px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-left: 8px;
+            border: 1px solid #0066CC;
+            display: inline-block;
+        }
+        
+        .validation-panel {
+            background: #f8f8f8;
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .validation-panel h4 {
+            text-transform: uppercase;
+            font-size: 11px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-week {
+            min-width: 150px;
+            background: #fff;
+            border: 1px solid #000;
+            padding: 15px;
+            text-align: center;
+            margin-right: 10px;
+        }
+        
+        .timeline-week.current {
+            background: #000;
+            color: #fff;
+        }
+        
+        .module-timeline {
+            display: flex;
+            overflow-x: auto;
+            gap: 0;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .assessment-component {
+            border: 1px solid #000;
+            padding: 20px;
+            margin: 15px 0;
+            background: #fff;
+        }
+        
+        .learning-outcome {
+            background: #f8f8f8;
+            border-left: 3px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .export-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            margin: 30px 0;
+            border: 1px solid #000;
+        }
+        
+        .export-card {
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #fff;
+        }
+        
+        .export-card:hover {
+            background: #f8f8f8;
+        }
+        
+        h3, h4, h5, h6 {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+        
+        p {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 11px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        table th, table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+        
+        table th {
+            background: #000;
+            color: #fff;
+        }
+        
+        .mobile-container {
+            max-width: 375px;
+            margin: 0 auto;
+            border: 2px solid #000;
+            padding: 20px;
+            background: #fff;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .wizard-steps {
+                flex-direction: column;
+            }
+            
+            .wizard-step {
+                border-right: none;
+                border-bottom: 1px solid #000;
+            }
+            
+            .wizard-step:last-child {
+                border-bottom: none;
+            }
+            
+            .template-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .module-timeline {
+                flex-direction: column;
+            }
+            
+            .timeline-week {
+                min-width: auto;
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #000; margin-bottom: 60px; font-weight: normal; text-transform: uppercase; letter-spacing: 3px; font-size: 16px; border-bottom: 1px solid #000; padding-bottom: 20px;">
+            AI CURRICULUM BUILDER<br>
+            <small style="color: #666; font-size: 10px; letter-spacing: 2px;">WIREFRAME UI/UX - USER JOURNEY FLOW</small>
+        </h1>
+
+        <!-- Screen 1: Dashboard Landing -->
+        <div class="wireframe">
+            <h2>DASHBOARD LANDING PAGE</h2>
+            <div class="header">
+                <div class="logo">AI CURRICULUM BUILDER - NGEE ANN POLYTECHNIC</div>
+                <div class="user-info">
+                    <span>NOTIFICATIONS</span>
+                    <span>SETTINGS</span>
+                    <span>DR. CLARISSA LEE</span>
+                </div>
+            </div>
+
+            <div style="margin: 30px 0;">
+                <h3>WELCOME BACK, DR. CLARISSA LEE</h3>
+                <p style="color: #666; margin-top: 10px;">SCHOOL OF HEALTH SCIENCES | PROGRAMME LEAD</p>
+            </div>
+
+            <div class="ai-suggestions">
+                <h4>AI SMART START RECOMMENDATIONS <span class="ai-indicator">POWERED BY AI</span></h4>
+                <p style="margin-bottom: 15px;">BASED ON YOUR PROFILE & TEACHING HISTORY:</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <strong>SUGGESTED FOR YOU:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>REFRESH "BASIC NURSING SKILLS" (2019 VERSION)</li>
+                            <li>CREATE "ADVANCED WOUND CARE" MODULE</li>
+                            <li>UPDATE "INFECTION CONTROL" WITH COVID PROTOCOLS</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <strong>TRENDING IN HEALTH SCIENCES:</strong>
+                        <ul style="margin-top: 10px;">
+                            <li>MENTAL HEALTH FIRST AID CERTIFICATION</li>
+                            <li>DIGITAL HEALTH LITERACY MODULES</li>
+                            <li>INTERPROFESSIONAL COLLABORATION TRAINING</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-grid">
+                <div class="card">
+                    <h4>CREATE NEW COURSE</h4>
+                    <p>START FROM SCRATCH WITH AI-GUIDED DESIGN <span class="ai-highlight">AI POWERED</span></p>
+                    <button class="btn btn-primary">START CREATING</button>
+                </div>
+                <div class="card">
+                    <h4>REFRESH EXISTING COURSE</h4>
+                    <p>UPDATE AND MODERNIZE EXISTING CURRICULUM</p>
+                    <button class="btn btn-outline">UPLOAD DOCUMENTS</button>
+                </div>
+                <div class="card">
+                    <h4>QUICK START FROM TEMPLATE</h4>
+                    <p>500+ TEMPLATES ACROSS ALL SCHOOLS & DOMAINS <span class="ai-highlight">AI CURATED</span></p>
+                    <button class="btn btn-secondary">BROWSE TEMPLATE LIBRARY</button>
+                </div>
+            </div>
+
+            <div>
+                <h4>RECENT PROJECTS</h4>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>ADVANCED DIPLOMA IN CRITICAL CARE</strong>
+                            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px;">WORK-STUDY PROGRAMME | LAST EDITED: 2 DAYS AGO</div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div class="program-type-badge">70% COMPLETE</div>
+                            <button class="btn btn-primary">CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <strong>DIPLOMA IN CYBERSECURITY</strong>
+                            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px;">FULL-TIME DIPLOMA | SUBMITTED: 15 OCT 2025</div>
+                        </div>
+                        <div style="display: flex; gap: 15px; align-items: center;">
+                            <div style="background: #000; color: #fff; padding: 4px 8px; font-size: 9px; text-transform: uppercase;">SUBMITTED</div>
+                            <button class="btn btn-secondary">VIEW</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">12</div>
+                    <div>COURSES CREATED</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">8</div>
+                    <div>APPROVED</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">6.2H</div>
+                    <div>AVG. COMPLETION TIME</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">92%</div>
+                    <div>APPROVAL RATE</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 2: Course Foundation Setup -->
+        <div class="wireframe">
+            <h2>PHASE 1: COURSE FOUNDATION SETUP</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK TO DASHBOARD</button>
+                <div>STEP 1 OF 6: DEFINE COURSE FOUNDATION</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 10-15 MINUTES</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 15%;"></div>
+            </div>
+
+            <div class="wizard-steps">
+                <div class="wizard-step active">
+                    <div class="step-circle">1</div>
+                    <div>COURSE SETUP</div>
+                </div>
+                <div class="wizard-step">
+                    <div class="step-circle">2</div>
+                    <div>LEARNING DESIGN</div>
+                </div>
+                <div class="wizard-step">
+                    <div class="step-circle">3</div>
+                    <div>CONTENT STRUCTURE</div>
+                </div>
+                <div class="wizard-step">
+                    <div class="step-circle">4</div>
+                    <div>ASSESSMENT STRATEGY</div>
+                </div>
+                <div class="wizard-step">
+                    <div class="step-circle">5</div>
+                    <div>MATERIALS GENERATION</div>
+                </div>
+                <div class="wizard-step">
+                    <div class="step-circle">6</div>
+                    <div>REVIEW & DEPLOY</div>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="form-group">
+                        <label>SCHOOL & DOMAIN SELECTION</label>
+                        <select class="form-control">
+                            <option>HEALTH SCIENCES</option>
+                            <option>ENGINEERING</option>
+                            <option>INFORMATION TECHNOLOGY</option>
+                            <option>BUSINESS & ACCOUNTANCY</option>
+                            <option>DESIGN & MEDIA</option>
+                            <option>INTERDISCIPLINARY STUDIES</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>COURSE CODE</label>
+                        <input type="text" class="form-control" value="SHSN401">
+                    </div>
+
+                    <div class="form-group">
+                        <label>COURSE TITLE</label>
+                        <input type="text" class="form-control" value="ADVANCED DIPLOMA IN CRITICAL CARE NURSING">
+                    </div>
+
+                    <div class="form-group">
+                        <label>COURSE DESCRIPTION</label>
+                        <textarea class="form-control" rows="4">THIS PROGRAMME PREPARES REGISTERED NURSES FOR ADVANCED PRACTICE IN CRITICAL CARE SETTINGS THROUGH INTEGRATED THEORY AND WORKPLACE TRAINING</textarea>
+                        <button class="btn ai-feature" style="margin-top: 10px;">AI ENHANCE</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>PROGRAMME TYPE</label>
+                        <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                            <label><input type="radio" name="programType"> FULL-TIME DIPLOMA (3 YEARS, 120 CU)</label>
+                            <label><input type="radio" name="programType"> PART-TIME DIPLOMA (FLEXIBLE DURATION)</label>
+                            <label><input type="radio" name="programType" checked> WORK-STUDY PROGRAMME (24-25 WEEKS)</label>
+                            <label><input type="radio" name="programType"> SPECIALIST DIPLOMA (POST-DIPLOMA, 1 YEAR)</label>
+                            <label><input type="radio" name="programType"> ADVANCED DIPLOMA (POST-DIPLOMA, 6-12 MONTHS)</label>
+                            <label><input type="radio" name="programType"> SHORT COURSE/PET MODULE (1-8 WEEKS)</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>DELIVERY MODE</label>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <label><input type="radio" name="deliveryMode"> FACE-TO-FACE</label>
+                            <label><input type="radio" name="deliveryMode"> ONLINE</label>
+                            <label><input type="radio" name="deliveryMode" checked> BLENDED</label>
+                            <label><input type="radio" name="deliveryMode"> HYBRID</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ai-suggestions">
+                        <h4>AI COURSE ASSISTANT <span class="ai-indicator">POWERED BY AI</span></h4>
+                        <p style="margin-bottom: 15px;">SMART SUGGESTIONS BASED ON YOUR INPUTS:</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                <strong>AUTO-SUGGESTIONS:</strong>
+                                <ul>
+                                    <li>COURSE CODE: SHSN401 <button class="btn ai-feature" style="padding: 4px 8px; margin-left: 8px; font-size: 8px;">APPLY</button></li>
+                                    <li>SIMILAR COURSES FOUND: 3 <button class="btn ai-feature" style="padding: 4px 8px; margin-left: 8px; font-size: 8px;">VIEW</button></li>
+                                    <li>WSP TEMPLATE MATCHED <button class="btn ai-feature" style="padding: 4px 8px; margin-left: 8px; font-size: 8px;">USE</button></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <strong>COMPLIANCE CHECKS:</strong>
+                                <ul>
+                                    <li>SSG HEALTH SECTOR SKILLS LOADED <span class="ai-highlight">✓</span></li>
+                                    <li>NP ASSESSMENT FRAMEWORK APPLIED <span class="ai-highlight">✓</span></li>
+                                    <li>WSP 70:30 RATIO CONFIGURED <span class="ai-highlight">✓</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4>PROGRAMME TYPE COMPARISON</h4>
+                        <table>
+                            <tr><th>TYPE</th><th>DURATION</th><th>CREDITS</th></tr>
+                            <tr><td>FULL-TIME</td><td>3 YEARS</td><td>120 CU</td></tr>
+                            <tr style="background: #f8f8f8;"><td>WORK-STUDY</td><td>25 WEEKS</td><td>52 CU</td></tr>
+                            <tr><td>SPECIALIST</td><td>6-12 MONTHS</td><td>40-60 CU</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS</button>
+                <button class="btn btn-primary">NEXT: LEARNING DESIGN</button>
+            </div>
+        </div>
+
+        <!-- Screen 3: Learning Design -->
+        <div class="wireframe">
+            <h2>PHASE 2: LEARNING DESIGN</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK</button>
+                <div>STEP 2 OF 6: LEARNING DESIGN</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 1-2 HOURS</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 35%;"></div>
+            </div>
+
+            <div class="nav-pills">
+                <div class="nav-pill active">LEARNING FRAMEWORK</div>
+                <div class="nav-pill">LEARNING OUTCOMES</div>
+                <div class="nav-pill">SKILLS MAPPING</div>
+                <div class="nav-pill">MODULE STRUCTURE</div>
+            </div>
+
+            <div class="form-group">
+                <label>SELECT LEARNING FRAMEWORK</label>
+                <div class="card-grid">
+                    <div class="card" style="border: 2px solid #000;">
+                        <h4>SKILLS CERTIFICATE MODEL</h4>
+                        <p>IDEAL FOR WSP AND STACKABLE CREDENTIALS. FOCUS ON COMPETENCY-BASED OUTCOMES.</p>
+                        <div class="school-badge">RECOMMENDED FOR HEALTHCARE WSP</div>
+                    </div>
+                    <div class="card">
+                        <h4>MODULE-BASED MODEL</h4>
+                        <p>TRADITIONAL FULL-TIME PROGRAMME STRUCTURE WITH SEMESTER MODULES.</p>
+                    </div>
+                    <div class="card">
+                        <h4>COMPETENCY-BASED MODEL</h4>
+                        <p>FOCUS ON DEMONSTRABLE SKILLS AND WORKPLACE PERFORMANCE.</p>
+                    </div>
+                    <div class="card">
+                        <h4>PROJECT-BASED MODEL</h4>
+                        <p>LEARNING THROUGH PRACTICAL PROJECTS AND REAL-WORLD APPLICATIONS.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>COURSE LEARNING OUTCOMES</label>
+                <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                    <button class="btn ai-feature">AI GENERATE FROM DESCRIPTION</button>
+                    <button class="btn ai-feature">AI IMPORT FROM SIMILAR COURSES</button>
+                    <button class="btn btn-outline">IMPORT FROM TEMPLATE</button>
+                    <button class="btn btn-outline">CREATE MANUALLY</button>
+                </div>
+                
+                <div class="ai-suggestions" style="margin-bottom: 20px;">
+                    <h4>AI OUTCOME SUGGESTIONS <span class="ai-indicator">BASED ON COURSE DESCRIPTION</span></h4>
+                    <p style="margin-bottom: 15px;">CLICK TO ADD SUGGESTED LEARNING OUTCOMES:</p>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                        <div style="padding: 10px; border: 1px solid #fff; cursor: pointer;" onclick="this.style.background='#004499'">
+                            <strong>LO1:</strong> DEMONSTRATE ADVANCED CLINICAL ASSESSMENT SKILLS IN CRITICAL CARE ENVIRONMENTS
+                            <button class="btn ai-feature" style="float: right; padding: 4px 8px; font-size: 8px;">ADD</button>
+                        </div>
+                        <div style="padding: 10px; border: 1px solid #fff; cursor: pointer;" onclick="this.style.background='#004499'">
+                            <strong>LO2:</strong> APPLY EVIDENCE-BASED INTERVENTIONS FOR CRITICALLY ILL PATIENTS
+                            <button class="btn ai-feature" style="float: right; padding: 4px 8px; font-size: 8px;">ADD</button>
+                        </div>
+                        <div style="padding: 10px; border: 1px solid #fff; cursor: pointer;" onclick="this.style.background='#004499'">
+                            <strong>LO3:</strong> COLLABORATE EFFECTIVELY IN INTERPROFESSIONAL HEALTHCARE TEAMS
+                            <button class="btn ai-feature" style="float: right; padding: 4px 8px; font-size: 8px;">ADD</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="learning-outcome">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div style="flex: 1;">
+                            <strong>LO1:</strong> DEMONSTRATE ADVANCED CLINICAL ASSESSMENT SKILLS IN CRITICAL CARE ENVIRONMENTS
+                            <span class="ai-highlight">AI GENERATED</span>
+                            <div style="font-size: 10px; color: #666; margin-top: 8px; text-transform: uppercase;">
+                                MAPPED TO: SSG HEALTH SECTOR - NURSING - ADVANCED CLINICAL PRACTICE
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-outline" style="padding: 8px 12px; font-size: 9px;">EDIT</button>
+                            <button class="btn btn-outline" style="padding: 8px 12px; font-size: 9px;">DELETE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-outcome">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div style="flex: 1;">
+                            <strong>LO2:</strong> APPLY EVIDENCE-BASED INTERVENTIONS FOR CRITICALLY ILL PATIENTS
+                            <span class="ai-highlight">AI GENERATED</span>
+                            <div style="font-size: 10px; color: #666; margin-top: 8px; text-transform: uppercase;">
+                                MAPPED TO: SSG HEALTH SECTOR - NURSING - EVIDENCE-BASED PRACTICE
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <button class="btn btn-outline" style="padding: 8px 12px; font-size: 9px;">EDIT</button>
+                            <button class="btn btn-outline" style="padding: 8px 12px; font-size: 9px;">DELETE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-outline">ADD LEARNING OUTCOME</button>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS</button>
+                <button class="btn btn-primary">NEXT: MODULE BREAKDOWN</button>
+            </div>
+        </div>
+
+        <!-- Screen 4: Module Breakdown -->
+        <div class="wireframe">
+            <h2>PHASE 3: MODULE BREAKDOWN & TIMELINE</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK</button>
+                <div>STEP 3 OF 6: MODULE BREAKDOWN</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 45-60 MINUTES</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 55%;"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="form-group">
+                        <label>PROGRAMME TIMELINE (25 WEEKS - WORK-STUDY PROGRAMME) <span class="ai-indicator">AI OPTIMIZED</span></label>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                            <button class="btn ai-feature">AI OPTIMIZE SCHEDULE</button>
+                            <button class="btn ai-feature">AI BALANCE WORKLOAD</button>
+                            <button class="btn btn-outline">MANUAL ADJUSTMENT</button>
+                        </div>
+                        <div class="module-timeline">
+                            <div class="timeline-week current">
+                                <strong>WEEK 1-3</strong>
+                                <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">ORIENTATION & FUNDAMENTALS</div>
+                                <div style="font-size: 10px; color: #666; text-transform: uppercase;">72 HOURS</div>
+                                <div style="margin-top: 5px;"><span class="ai-highlight">AI OPTIMIZED</span></div>
+                            </div>
+                            <div class="timeline-week">
+                                <strong>WEEK 4-8</strong>
+                                <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">CORE CLINICAL SKILLS</div>
+                                <div style="font-size: 10px; color: #666; text-transform: uppercase;">120 HOURS</div>
+                                <div style="margin-top: 5px;"><span class="ai-highlight">AI BALANCED</span></div>
+                            </div>
+                            <div class="timeline-week">
+                                <strong>WEEK 9-16</strong>
+                                <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">WORKPLACE TRAINING</div>
+                                <div style="font-size: 10px; color: #666; text-transform: uppercase;">240 HOURS</div>
+                                <div style="margin-top: 5px;"><span class="ai-highlight">AI SCHEDULED</span></div>
+                            </div>
+                            <div class="timeline-week">
+                                <strong>WEEK 17-22</strong>
+                                <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">ADVANCED PRACTICE</div>
+                                <div style="font-size: 10px; color: #666; text-transform: uppercase;">180 HOURS</div>
+                                <div style="margin-top: 5px;"><span class="ai-highlight">AI PROGRESSIVE</span></div>
+                            </div>
+                            <div class="timeline-week">
+                                <strong>WEEK 23-25</strong>
+                                <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">INTEGRATION & ASSESSMENT</div>
+                                <div style="font-size: 10px; color: #666; text-transform: uppercase;">96 HOURS</div>
+                                <div style="margin-top: 5px;"><span class="ai-highlight">AI REVIEW</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>MODULE DETAILS</label>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                            <button class="btn ai-feature">AI GENERATE MODULE</button>
+                            <button class="btn btn-outline">IMPORT FROM TEMPLATE</button>
+                            <button class="btn btn-outline">CREATE MANUALLY</button>
+                        </div>
+                        <div class="card">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                <h4>MODULE 1: CRITICAL CARE FUNDAMENTALS <span class="ai-highlight">AI GENERATED</span></h4>
+                                <div style="display: flex; gap: 10px;">
+                                    <span class="program-type-badge">72 HOURS</span>
+                                    <button class="btn btn-outline" style="padding: 8px 12px;">EDIT</button>
+                                </div>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <strong>LEARNING ACTIVITIES DISTRIBUTION: <span class="ai-highlight">AI OPTIMIZED</span></strong>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; margin-top: 15px; border: 1px solid #000;">
+                                    <div style="background: #f8f8f8; padding: 15px; text-align: center; border-right: 1px solid #000;">
+                                        <div style="font-weight: bold; text-transform: uppercase; font-size: 10px;">LECTURES</div>
+                                        <div style="font-size: 11px;">24 HOURS (33%)</div>
+                                    </div>
+                                    <div style="background: #f8f8f8; padding: 15px; text-align: center; border-right: 1px solid #000;">
+                                        <div style="font-weight: bold; text-transform: uppercase; font-size: 10px;">TUTORIALS</div>
+                                        <div style="font-size: 11px;">18 HOURS (25%)</div>
+                                    </div>
+                                    <div style="background: #f8f8f8; padding: 15px; text-align: center;">
+                                        <div style="font-weight: bold; text-transform: uppercase; font-size: 10px;">LABS/PRACTICE</div>
+                                        <div style="font-size: 11px;">30 HOURS (42%)</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <strong>TOPICS COVERED: <span class="ai-highlight">AI CURATED</span></strong>
+                                <ul style="margin-top: 15px; list-style: none; padding: 0;">
+                                    <li style="margin: 8px 0; text-transform: uppercase; font-size: 10px;">CRITICAL CARE ENVIRONMENT AND EQUIPMENT</li>
+                                    <li style="margin: 8px 0; text-transform: uppercase; font-size: 10px;">PATIENT MONITORING AND ASSESSMENT</li>
+                                    <li style="margin: 8px 0; text-transform: uppercase; font-size: 10px;">INFECTION CONTROL AND SAFETY PROTOCOLS</li>
+                                    <li style="margin: 8px 0; text-transform: uppercase; font-size: 10px;">BASIC PHARMACOLOGY FOR CRITICAL CARE</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <button class="btn ai-feature">AI ADD MODULE</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sidebar">
+                        <h3>PROGRAMME OVERVIEW</h3>
+                        <ul>
+                            <li>TOTAL DURATION: 25 WEEKS</li>
+                            <li>TOTAL HOURS: 708 HOURS</li>
+                            <li>THEORY: 30% (212 HOURS)</li>
+                            <li>WORKPLACE: 70% (496 HOURS)</li>
+                            <li>ASSESSMENT POINTS: 8</li>
+                            <li>CREDIT UNITS: 52 CU</li>
+                        </ul>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h4>AI PROGRESS TRACKER <span class="ai-indicator">SMART GUIDANCE</span></h4>
+                        <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                            <div>COURSE SETUP: 85% COMPLETE <span class="ai-highlight">✓</span></div>
+                            <div>LEARNING OUTCOMES: 75% COMPLETE <span class="ai-highlight">IN PROGRESS</span></div>
+                            <div>MODULE STRUCTURE: 0% COMPLETE <span class="ai-highlight">NEXT</span></div>
+                            <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #333;">
+                                <strong>AI NEXT STEPS:</strong>
+                                <div style="margin-top: 8px;">1. FINALIZE LEARNING OUTCOMES (2 MORE NEEDED)</div>
+                                <div>2. REVIEW ASSESSMENT ALIGNMENT</div>
+                                <div>3. PROCEED TO MODULE DESIGN</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS</button>
+                <button class="btn btn-primary">NEXT: ASSESSMENT DESIGN</button>
+            </div>
+        </div>
+
+        <!-- Screen 5: Assessment Framework -->
+        <div class="wireframe">
+            <h2>PHASE 4: ASSESSMENT FRAMEWORK</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK</button>
+                <div>STEP 4 OF 6: ASSESSMENT DESIGN</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 45-60 MINUTES</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 75%;"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="form-group">
+                        <label>OVERALL ASSESSMENT FRAMEWORK</label>
+                        <select class="form-control">
+                            <option selected>100% CONTINUOUS ASSESSMENT (RECOMMENDED FOR WSP)</option>
+                            <option>70% CA + 30% FINAL EXAM</option>
+                            <option>60% CA + 40% FINAL EXAM</option>
+                            <option>CUSTOM WEIGHTAGE</option>
+                        </select>
+                        <button class="btn ai-feature" style="margin-top: 10px;">AI OPTIMIZE WEIGHTAGE</button>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ASSESSMENT COMPONENTS</label>
+                        <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                            <button class="btn ai-feature">AI GENERATE ASSESSMENTS</button>
+                            <button class="btn btn-outline">IMPORT FROM TEMPLATE</button>
+                            <button class="btn btn-outline">CREATE MANUALLY</button>
+                        </div>
+                        
+                        <div class="assessment-component">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                <h4>CLINICAL COMPETENCY PORTFOLIO <span class="ai-highlight">AI GENERATED</span></h4>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <span class="program-type-badge">40%</span>
+                                    <button class="btn btn-outline" style="padding: 8px 12px;">EDIT</button>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <strong>ASSESSMENT TYPE:</strong> PORTFOLIO<br>
+                                    <strong>METHOD:</strong> DOPS + WORKPLACE ASSESSMENT <span class="ai-highlight">AI RECOMMENDED</span><br>
+                                    <strong>TIMELINE:</strong> CONTINUOUS (WEEKS 9-22)
+                                </div>
+                                <div>
+                                    <strong>LEARNING OUTCOMES:</strong>
+                                    <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">
+                                        LO1: CLINICAL ASSESSMENT SKILLS<br>
+                                        LO2: EVIDENCE-BASED INTERVENTIONS<br>
+                                        LO5: PROFESSIONAL PRACTICE
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="assessment-component">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                                <h4>CASE STUDY ANALYSIS <span class="ai-highlight">AI GENERATED</span></h4>
+                                <div style="display: flex; gap: 10px; align-items: center;">
+                                    <span class="program-type-badge">25%</span>
+                                    <button class="btn btn-outline" style="padding: 8px 12px;">EDIT</button>
+                                </div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                <div>
+                                    <strong>ASSESSMENT TYPE:</strong> WRITTEN REPORT<br>
+                                    <strong>METHOD:</strong> INDIVIDUAL ANALYSIS <span class="ai-highlight">AI RECOMMENDED</span><br>
+                                    <strong>TIMELINE:</strong> WEEK 16
+                                </div>
+                                <div>
+                                    <strong>LEARNING OUTCOMES:</strong>
+                                    <div style="font-size: 10px; margin-top: 8px; text-transform: uppercase;">
+                                        LO2: EVIDENCE-BASED INTERVENTIONS<br>
+                                        LO3: CRITICAL THINKING<br>
+                                        LO4: DECISION MAKING
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="btn ai-feature">AI ADD ASSESSMENT COMPONENT</button>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="ai-suggestions">
+                        <h4>AI ASSESSMENT ANALYSIS <span class="ai-indicator">POWERED BY AI</span></h4>
+                        <div style="margin-bottom: 20px;">
+                            <strong>LEARNING OUTCOME COVERAGE:</strong>
+                            <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                                <div>LO1: CLINICAL ASSESSMENT - 2 ASSESSMENTS <span class="ai-highlight">OPTIMAL</span></div>
+                                <div>LO2: EVIDENCE-BASED PRACTICE - 2 ASSESSMENTS <span class="ai-highlight">OPTIMAL</span></div>
+                                <div style="color: #ccc;">LO8: SELF-DIRECTED LEARNING - 1 ASSESSMENT <span class="ai-highlight">ADD MORE</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>AI RECOMMENDATIONS:</strong>
+                            <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                                <div>GOOD ASSESSMENT VARIETY MAINTAINED</div>
+                                <div>WORKPLACE ASSESSMENTS WELL BALANCED</div>
+                                <div>CONSIDER PEER ASSESSMENT COMPONENT</div>
+                                <div>ADD SIMULATION-BASED ASSESSMENT</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h4>ASSESSMENT OVERVIEW</h4>
+                        <div style="margin: 20px 0;">
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>TOTAL COMPONENTS:</span>
+                                <strong>4</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>CONTINUOUS ASSESSMENT:</span>
+                                <strong>100%</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>WORKPLACE-BASED:</span>
+                                <strong>40%</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>WRITTEN COMPONENTS:</span>
+                                <strong>40%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h4>AI VALIDATION STATUS <span class="ai-indicator">AI</span></h4>
+                        <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                            <div>NP ASSESSMENT FRAMEWORK 2024 COMPLIANT <span class="ai-highlight">AI VERIFIED</span></div>
+                            <div>ALL LEARNING OUTCOMES ASSESSED <span class="ai-highlight">AI VERIFIED</span></div>
+                            <div>APPROPRIATE FOR WSP STRUCTURE <span class="ai-highlight">AI VERIFIED</span></div>
+                            <div>HEALTHCARE-SPECIFIC METHODS USED <span class="ai-highlight">AI VERIFIED</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS</button>
+                <button class="btn btn-primary">NEXT: CONTENT GENERATION</button>
+            </div>
+        </div>
+
+        <!-- Screen 6: Template Library -->
+        <div class="wireframe">
+            <h2>TEMPLATE LIBRARY</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK TO DASHBOARD</button>
+                <div>BROWSE 500+ TEMPLATES ACROSS ALL SCHOOLS</div>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn btn-outline">ADVANCED SEARCH</button>
+                    <button class="btn btn-primary">SUBMIT NEW TEMPLATE</button>
+                </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 250px 1fr; gap: 40px;">
+                <div>
+                    <div class="sidebar">
+                        <h3>FILTER TEMPLATES</h3>
+                        <div style="margin: 20px 0;">
+                            <label style="display: block; margin-bottom: 8px; font-size: 10px; text-transform: uppercase;">SCHOOL:</label>
+                            <select style="width: 100%; padding: 8px; border: 1px solid #fff; background: #333; color: #fff; font-family: inherit; font-size: 10px;">
+                                <option>ALL SCHOOLS</option>
+                                <option>ENGINEERING</option>
+                                <option>INFORMATION TECHNOLOGY</option>
+                                <option>BUSINESS & ACCOUNTANCY</option>
+                                <option>HEALTH SCIENCES</option>
+                                <option>DESIGN & MEDIA</option>
+                                <option>INTERDISCIPLINARY STUDIES</option>
+                            </select>
+                        </div>
+                        <div style="margin: 20px 0;">
+                            <label style="display: block; margin-bottom: 8px; font-size: 10px; text-transform: uppercase;">PROGRAMME TYPE:</label>
+                            <select style="width: 100%; padding: 8px; border: 1px solid #fff; background: #333; color: #fff; font-family: inherit; font-size: 10px;">
+                                <option>ALL TYPES</option>
+                                <option>FULL-TIME DIPLOMA</option>
+                                <option>WORK-STUDY PROGRAMME</option>
+                                <option>SPECIALIST DIPLOMA</option>
+                                <option>SHORT COURSE/PET</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                        <div>
+                            <h3>POPULAR TEMPLATES <span class="ai-highlight">AI RECOMMENDED</span></h3>
+                            <p style="color: #666;">SHOWING 6 OF 500+ TEMPLATES</p>
+                        </div>
+                        <div>
+                            <input type="text" placeholder="SEARCH TEMPLATES..." style="padding: 12px; margin-right: 15px; width: 250px; border: 1px solid #000; font-family: inherit; font-size: 10px; text-transform: uppercase;">
+                            <button class="btn ai-feature">AI SEARCH</button>
+                        </div>
+                    </div>
+
+                    <div class="template-grid">
+                        <div class="template-card">
+                            <div class="school-badge">ENGINEERING</div>
+                            <h4>FULL-TIME DIPLOMA TEMPLATE</h4>
+                            <p style="margin: 15px 0;">
+                                COMPREHENSIVE 3-YEAR PROGRAMME STRUCTURE WITH 6 SEMESTERS. PERFECT FOR ENGINEERING DISCIPLINES.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 145 TIMES</span>
+                                <span>120 CU</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn btn-primary">USE TEMPLATE</button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="school-badge">HEALTH SCIENCES</div>
+                            <h4>WORK-STUDY PROGRAMME TEMPLATE <span class="ai-highlight">AI MATCH 95%</span></h4>
+                            <p style="margin: 15px 0;">
+                                INTENSIVE 25-WEEK PROGRAMME WITH 70:30 WORKPLACE-TO-CLASSROOM RATIO. HEALTHCARE FOCUSED.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 89 TIMES</span>
+                                <span>52 CU</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn ai-feature">AI USE TEMPLATE</button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="school-badge">BUSINESS</div>
+                            <h4>PET MODULE TEMPLATE</h4>
+                            <p style="margin: 15px 0;">
+                                PROFESSIONAL EDUCATION & TRAINING MODULE FOR WORKING PROFESSIONALS. 4-WEEK INTENSIVE FORMAT.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 203 TIMES</span>
+                                <span>4 CU</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn btn-primary">USE TEMPLATE</button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="school-badge">IT</div>
+                            <h4>CYBERSECURITY SPECIALIST DIPLOMA</h4>
+                            <p style="margin: 15px 0;">
+                                POST-DIPLOMA SPECIALIZATION IN CYBERSECURITY WITH HANDS-ON LABS AND INDUSTRY PROJECTS.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 67 TIMES</span>
+                                <span>45 CU</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn btn-primary">USE TEMPLATE</button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="school-badge">DESIGN & MEDIA</div>
+                            <h4>PORTFOLIO-BASED ASSESSMENT</h4>
+                            <p style="margin: 15px 0;">
+                                CREATIVE ASSESSMENT FRAMEWORK WITH PORTFOLIO DEVELOPMENT AND PUBLIC EXHIBITION COMPONENTS.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 124 TIMES</span>
+                                <span>ASSESSMENT</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn btn-primary">USE TEMPLATE</button>
+                            </div>
+                        </div>
+
+                        <div class="template-card">
+                            <div class="school-badge">INTERDISCIPLINARY</div>
+                            <h4>COMMON CORE MODULE</h4>
+                            <p style="margin: 15px 0;">
+                                UNIVERSAL MODULE TEMPLATE FOR COMMUNICATION SKILLS, CRITICAL THINKING, AND GENERAL EDUCATION.
+                            </p>
+                            <div class="template-meta">
+                                <span>USED 298 TIMES</span>
+                                <span>3 CU</span>
+                            </div>
+                            <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                <button class="btn btn-outline">PREVIEW</button>
+                                <button class="btn btn-primary">USE TEMPLATE</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 40px;">
+                        <button class="btn btn-outline">LOAD MORE TEMPLATES</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 7: Validation & Export -->
+        <div class="wireframe">
+            <h2>PHASE 6: VALIDATION & EXPORT</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK</button>
+                <div>STEP 6 OF 6: VALIDATION & EXPORT</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 30 MINUTES</div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 100%;"></div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="validation-panel">
+                        <h4>AI COMPREHENSIVE VALIDATION RESULTS <span class="ai-indicator">AI POWERED</span></h4>
+                        <div style="margin-top: 20px;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
+                                <div>
+                                    <strong>FRAMEWORK COMPLIANCE:</strong>
+                                    <div style="margin-top: 15px; font-size: 11px; text-transform: uppercase;">
+                                        <div>NP ASSESSMENT FRAMEWORK 2024 <span class="ai-highlight">AI VERIFIED</span></div>
+                                        <div>SSG SKILLS FRAMEWORK (HEALTH SECTOR) <span class="ai-highlight">AI VERIFIED</span></div>
+                                        <div>MOE CURRICULUM GUIDELINES <span class="ai-highlight">AI VERIFIED</span></div>
+                                        <div>WSP REQUIREMENTS (70:30 RATIO) <span class="ai-highlight">AI VERIFIED</span></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong>AI QUALITY ANALYSIS:</strong>
+                                    <div style="margin-top: 15px; font-size: 11px; text-transform: uppercase;">
+                                        <div>LEARNING OUTCOME ALIGNMENT <span class="ai-highlight">95% MATCH</span></div>
+                                        <div>ASSESSMENT VALIDITY <span class="ai-highlight">EXCELLENT</span></div>
+                                        <div>CONTENT COMPLETENESS <span class="ai-highlight">100%</span></div>
+                                        <div style="color: #666;">MINOR FORMATTING ISSUES <span class="ai-highlight">AI DETECTED</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CURRICULUM SUMMARY</label>
+                        <div class="card">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px;">
+                                <div>
+                                    <strong>PROGRAMME DETAILS:</strong>
+                                    <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                                        <div>CODE: SHSN401</div>
+                                        <div>TITLE: ADVANCED DIPLOMA IN CRITICAL CARE NURSING</div>
+                                        <div>TYPE: WORK-STUDY PROGRAMME</div>
+                                        <div>DURATION: 25 WEEKS</div>
+                                        <div>CREDITS: 52 CU</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong>STRUCTURE:</strong>
+                                    <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                                        <div>MODULES: 4</div>
+                                        <div>TOTAL HOURS: 708</div>
+                                        <div>THEORY: 212 HOURS (30%)</div>
+                                        <div>WORKPLACE: 496 HOURS (70%)</div>
+                                        <div>ASSESSMENT COMPONENTS: 4</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <strong>QUALITY METRICS:</strong>
+                                    <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                                        <div>LEARNING OUTCOMES: 9</div>
+                                        <div>SSG SKILLS: 15 MAPPED</div>
+                                        <div>VALIDATION SCORE: 95%</div>
+                                        <div>COMPLIANCE: EXCELLENT</div>
+                                        <div>TIME SAVED: 38 HOURS</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>EXPORT CURRICULUM PACKAGE</label>
+                        <div class="export-options">
+                            <div class="export-card">
+                                <strong>COMPLETE DOCUMENTATION</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    FULL CURRICULUM PACKAGE WITH ALL MODULES, ASSESSMENTS, AND MATERIALS
+                                </div>
+                                <button class="btn btn-primary">DOWNLOAD ZIP</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>LMS PACKAGE</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    NP LMS (BRIGHTSPACE) READY COURSE STRUCTURE WITH MATERIALS
+                                </div>
+                                <button class="btn btn-primary">EXPORT TO LMS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>EXECUTIVE SUMMARY</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    HIGH-LEVEL OVERVIEW FOR STAKEHOLDER REVIEW AND APPROVAL
+                                </div>
+                                <button class="btn btn-primary">GENERATE PDF</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>DIGITAL PORTFOLIO</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    INTERACTIVE WEB-BASED CURRICULUM SHOWCASE
+                                </div>
+                                <button class="btn btn-primary">CREATE PORTFOLIO</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h4>AI DEVELOPMENT SUMMARY <span class="ai-indicator">AI TRACKED</span></h4>
+                        <div style="margin: 20px 0; font-size: 11px; text-transform: uppercase;">
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>TOTAL TIME SPENT:</span>
+                                <strong>4.2 HOURS</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>TIME SAVED VS MANUAL:</span>
+                                <strong>38 HOURS (90%) <span class="ai-highlight">AI ACCELERATED</span></strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>AI SUGGESTIONS USED:</span>
+                                <strong>23 OF 31 (74%) <span class="ai-highlight">AI ASSISTED</span></strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>VALIDATION SCORE:</span>
+                                <strong>95% <span class="ai-highlight">AI VALIDATED</span></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h4>QUALITY INDICATORS</h4>
+                        <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                            <div>EXCEEDS NP QUALITY STANDARDS</div>
+                            <div>INDUSTRY-ALIGNED COMPETENCIES</div>
+                            <div>STUDENT-CENTERED DESIGN</div>
+                            <div>ASSESSMENT VALIDITY CONFIRMED</div>
+                            <div>WORKPLACE INTEGRATION OPTIMAL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding: 30px; background: #f8f8f8; border: 1px solid #000;">
+                <div>
+                    <strong>CURRICULUM DEVELOPMENT COMPLETE</strong>
+                    <div style="font-size: 11px; color: #666; text-transform: uppercase; margin-top: 8px;">ADVANCED DIPLOMA IN CRITICAL CARE NURSING IS READY FOR REVIEW AND APPROVAL</div>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <button class="btn btn-secondary">SAVE AS DRAFT</button>
+                    <button class="btn btn-success">SUBMIT FOR APPROVAL</button>
+                    <button class="btn btn-primary">RETURN TO DASHBOARD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Screen 8: Document Generation Suite -->
+        <div class="wireframe">
+            <h2>PHASE 6B: AI DOCUMENT GENERATION SUITE</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK TO VALIDATION</button>
+                <div>COMPREHENSIVE TEACHING & ASSESSMENT MATERIALS</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 5-10 MINUTES GENERATION TIME</div>
+            </div>
+
+            <div class="ai-suggestions">
+                <h4>AI DOCUMENT GENERATION STATUS <span class="ai-indicator">POWERED BY AI</span></h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+                    <div>
+                        <strong>CURRICULUM ANALYSIS:</strong>
+                        <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                            <div>4 MODULES IDENTIFIED <span class="ai-highlight">✓</span></div>
+                            <div>9 LEARNING OUTCOMES MAPPED <span class="ai-highlight">✓</span></div>
+                            <div>4 ASSESSMENT COMPONENTS <span class="ai-highlight">✓</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>CONTENT SPECIFICATIONS:</strong>
+                        <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                            <div>HEALTHCARE DOMAIN FOCUS <span class="ai-highlight">✓</span></div>
+                            <div>WSP 70:30 STRUCTURE <span class="ai-highlight">✓</span></div>
+                            <div>25-WEEK TIMELINE <span class="ai-highlight">✓</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <strong>AI GENERATION READY:</strong>
+                        <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                            <div>TEMPLATES LOADED <span class="ai-highlight">✓</span></div>
+                            <div>NP STANDARDS APPLIED <span class="ai-highlight">✓</span></div>
+                            <div>GENERATION QUEUE READY <span class="ai-highlight">✓</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-pills">
+                <div class="nav-pill active">TEACHING MATERIALS</div>
+                <div class="nav-pill">ASSESSMENT TOOLS</div>
+                <div class="nav-pill">DIGITAL RESOURCES</div>
+                <div class="nav-pill">LMS INTEGRATION</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="form-group">
+                        <label>TEACHING MATERIALS SUITE <span class="ai-indicator">AI POWERED</span></label>
+                        
+                        <div class="export-options">
+                            <div class="export-card">
+                                <strong>TEACHING & ASSESSMENT PLAN (TAP)</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    COMPREHENSIVE NP TAP FORMAT WITH LEARNING OUTCOMES, WEEKLY BREAKDOWN, ASSESSMENT MATRIX
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> MODULE DESCRIPTIONS | RUBRICS | RESOURCE LISTS | MAPPING TABLES
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE TAP</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>LECTURE PRESENTATION SLIDES</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    POWERPOINT SLIDES FOR ALL 4 MODULES (APPROX. 200+ SLIDES)
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> SPEAKER NOTES | ANIMATIONS | REFERENCES | INTERACTIVE ELEMENTS
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE SLIDES</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>TUTORIAL MATERIALS PACKAGE</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    CASE STUDIES, PROBLEM-BASED LEARNING SCENARIOS, GROUP ACTIVITIES
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> FACILITATOR GUIDES | STUDENT WORKSHEETS | SOLUTION KEYS
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE TUTORIALS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>LAB PRACTICAL GUIDES</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    STEP-BY-STEP PRACTICAL INSTRUCTIONS FOR CLINICAL SKILLS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> SAFETY PROTOCOLS | EQUIPMENT LISTS | ASSESSMENT CRITERIA
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE LAB GUIDES</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>ASSESSMENT TOOLS SUITE <span class="ai-indicator">AI POWERED</span></label>
+                        
+                        <div class="export-options">
+                            <div class="export-card">
+                                <strong>ASSESSMENT RUBRICS</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    DETAILED SCORING RUBRICS FOR ALL 4 ASSESSMENT COMPONENTS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> PERFORMANCE LEVELS | DESCRIPTORS | WEIGHTINGS
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE RUBRICS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>QUIZ BANKS (BRIGHTSPACE LTI)</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    500+ QUESTIONS: MCQ, SHORT ANSWER, SCENARIO-BASED
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> QTI FORMAT | BLOOM'S TAXONOMY TAGS | DIFFICULTY LEVELS
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE QUIZ BANKS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>CLINICAL ASSESSMENT FORMS</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    DOPS, WORKPLACE CHECKLISTS, COMPETENCY EVALUATIONS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> DIGITAL FORMS | MOBILE-FRIENDLY | SUPERVISOR GUIDES
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE CLINICAL FORMS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>REFLECTION TEMPLATES</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    STRUCTURED REFLECTION GUIDES FOR CRITICAL THINKING DEVELOPMENT
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> GIBBS MODEL | CRITICAL INCIDENTS | PEER FEEDBACK
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE REFLECTIONS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h4>GENERATION PREVIEW <span class="ai-indicator">AI</span></h4>
+                        <div style="margin: 20px 0; font-size: 11px; text-transform: uppercase;">
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>TOTAL DOCUMENTS:</span>
+                                <strong>47 FILES</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>ESTIMATED SIZE:</span>
+                                <strong>125 MB</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>GENERATION TIME:</span>
+                                <strong>8-12 MINUTES</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>FORMAT TYPES:</span>
+                                <strong>DOCX, PPTX, PDF, QTI</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ai-suggestions">
+                        <h4>AI QUALITY ASSURANCE <span class="ai-indicator">AI</span></h4>
+                        <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                            <div>CONTENT ACCURACY VERIFICATION <span class="ai-highlight">✓</span></div>
+                            <div>NP TEMPLATE COMPLIANCE <span class="ai-highlight">✓</span></div>
+                            <div>ASSESSMENT ALIGNMENT CHECK <span class="ai-highlight">✓</span></div>
+                            <div>BRIGHTSPACE COMPATIBILITY <span class="ai-highlight">✓</span></div>
+                            <div>ACCESSIBILITY STANDARDS <span class="ai-highlight">✓</span></div>
+                        </div>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h4>QUICK ACTIONS</h4>
+                        <div style="margin-top: 15px;">
+                            <button class="btn ai-feature" style="width: 100%; margin-bottom: 10px;">AI GENERATE ALL (47 DOCS)</button>
+                            <button class="btn btn-outline" style="width: 100%; margin-bottom: 10px;">CUSTOMIZE SELECTION</button>
+                            <button class="btn btn-outline" style="width: 100%; margin-bottom: 10px;">PREVIEW TEMPLATES</button>
+                            <button class="btn btn-secondary" style="width: 100%;">SAVE FOR LATER</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS: VALIDATION</button>
+                <button class="btn btn-primary">NEXT: LMS INTEGRATION</button>
+            </div>
+        </div>
+
+        <!-- Screen 9: LMS Integration & Digital Resources -->
+        <div class="wireframe">
+            <h2>PHASE 6C: LMS INTEGRATION & DIGITAL RESOURCES</h2>
+            
+            <div class="header">
+                <button class="btn btn-outline">BACK</button>
+                <div>BRIGHTSPACE LMS DEPLOYMENT & DIGITAL ASSET CURATION</div>
+                <div style="font-size: 10px; color: #666; text-transform: uppercase;">SEAMLESS LMS INTEGRATION</div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
+                <div>
+                    <div class="form-group">
+                        <label>BRIGHTSPACE LMS INTEGRATION <span class="ai-indicator">AI AUTOMATED</span></label>
+                        
+                        <div class="card">
+                            <h4>LMS COURSE SHELL CONFIGURATION <span class="ai-highlight">AI GENERATED</span></h4>
+                            <div style="margin: 20px 0;">
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                                    <div>
+                                        <strong>COURSE STRUCTURE:</strong>
+                                        <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                                            <div>25 WEEKLY MODULES CREATED</div>
+                                            <div>CONTENT AREAS ORGANIZED</div>
+                                            <div>ASSESSMENT DROPBOXES SETUP</div>
+                                            <div>GRADEBOOK CONFIGURED</div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <strong>INTERACTIVE ELEMENTS:</strong>
+                                        <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
+                                            <div>DISCUSSION FORUMS CREATED</div>
+                                            <div>QUIZ BANKS IMPORTED</div>
+                                            <div>ASSIGNMENT WORKFLOWS</div>
+                                            <div>PEER REVIEW TOOLS</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn ai-feature">AI DEPLOY TO BRIGHTSPACE</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>CURATED DIGITAL RESOURCES <span class="ai-indicator">AI CURATED</span></label>
+                        
+                        <div class="export-options">
+                            <div class="export-card">
+                                <strong>CURATED WEB RESOURCES</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    QUALITY-VERIFIED LINKS, VIDEOS & ARTICLES WITH AI ANNOTATIONS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">AI VERIFIED</span> CREDIBILITY | RELEVANCE | ACCESSIBILITY | CURRENCY
+                                </div>
+                                <button class="btn ai-feature">AI CURATE RESOURCES</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>MULTIMEDIA CONTENT LIBRARY</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    EDUCATIONAL VIDEOS, SIMULATIONS & INTERACTIVE CONTENT
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> CLOSED CAPTIONS | TRANSCRIPTS | LEARNING OBJECTIVES
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE MULTIMEDIA</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>INDUSTRY PARTNER RESOURCES</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    WORKPLACE SUPERVISOR GUIDES & EVALUATION FORMS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> ONBOARDING PACKS | MENTORSHIP GUIDES | FEEDBACK TOOLS
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE PARTNER DOCS</button>
+                            </div>
+                            
+                            <div class="export-card">
+                                <strong>STUDENT SUPPORT MATERIALS</strong>
+                                <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
+                                    STUDY GUIDES, FAQ, COURSE HANDBOOK & ORIENTATION MATERIALS
+                                </div>
+                                <div style="margin: 10px 0; font-size: 9px; text-transform: uppercase;">
+                                    <span class="ai-highlight">INCLUDES</span> VIDEO ORIENTATIONS | STUDY PLANNERS | HELP RESOURCES
+                                </div>
+                                <button class="btn ai-feature">AI GENERATE SUPPORT DOCS</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="card">
+                        <h4>LMS DEPLOYMENT STATUS <span class="ai-indicator">AI</span></h4>
+                        <div style="margin: 20px 0; font-size: 11px; text-transform: uppercase;">
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>COURSE MODULES:</span>
+                                <strong>25/25 READY</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>QUIZ BANKS:</span>
+                                <strong>4 IMPORTED</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>ASSESSMENTS:</span>
+                                <strong>4 CONFIGURED</strong>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>RESOURCES:</span>
+                                <strong>150+ LINKED</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ai-suggestions">
+                        <h4>AI RESOURCE ANALYSIS <span class="ai-indicator">AI</span></h4>
+                        <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
+                            <div>CREDIBLE SOURCES IDENTIFIED: 247</div>
+                            <div>RELEVANT VIDEOS FOUND: 83</div>
+                            <div>INDUSTRY CASE STUDIES: 45</div>
+                            <div>PEER-REVIEWED ARTICLES: 156</div>
+                            <div>INTERACTIVE SIMULATIONS: 12</div>
+                        </div>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h4>BRIGHTSPACE SETTINGS</h4>
+                        <div style="margin-top: 15px; font-size: 11px; text-transform: uppercase;">
+                            <div><input type="checkbox" checked> GRADEBOOK AUTO-SYNC</div>
+                            <div><input type="checkbox" checked> ANALYTICS ENABLED</div>
+                            <div><input type="checkbox" checked> MOBILE OPTIMIZATION</div>
+                            <div><input type="checkbox" checked> ACCESSIBILITY COMPLIANCE</div>
+                            <div><input type="checkbox"> PARENT PORTAL ACCESS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                <button class="btn btn-secondary">PREVIOUS: DOCUMENT GENERATION</button>
+                <button class="btn btn-primary">NEXT: FINAL REVIEW</button>
+            </div>
+        </div>
+
+        <!-- Mobile Version -->
+        <div class="wireframe">
+            <h2>MOBILE DASHBOARD (RESPONSIVE DESIGN)</h2>
+            
+            <div class="mobile-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <div style="font-size: 12px; font-weight: bold; text-transform: uppercase;">AI CURRICULUM</div>
+                    <div style="display: flex; gap: 20px; font-size: 10px; text-transform: uppercase;">
+                        <span>NOTIFICATIONS</span>
+                        <span>PROFILE</span>
+                    </div>
+                </div>
+
+                <div style="background: #000; color: #fff; padding: 20px; margin-bottom: 30px;">
+                    <div style="font-size: 11px; text-transform: uppercase;">WELCOME BACK,</div>
+                    <div style="font-size: 14px; font-weight: bold; text-transform: uppercase;">DR. CLARISSA LEE</div>
+                    <div style="font-size: 9px; margin-top: 8px; text-transform: uppercase;">SCHOOL OF HEALTH SCIENCES</div>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h4>QUICK ACTIONS</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 15px; border: 1px solid #000;">
+                        <button class="btn btn-primary" style="padding: 20px; text-align: center; border: none;">NEW COURSE</button>
+                        <button class="btn btn-outline" style="padding: 20px; text-align: center; border: none; border-left: 1px solid #000;">REFRESH</button>
+                        <button class="btn btn-outline" style="padding: 20px; text-align: center; border: none; border-top: 1px solid #000;">TEMPLATES</button>
+                        <button class="btn btn-outline" style="padding: 20px; text-align: center; border: none; border-top: 1px solid #000; border-left: 1px solid #000;">ANALYTICS</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 30px;">
+                    <h4>CURRENT PROJECTS</h4>
+                    <div class="card" style="margin: 15px 0;">
+                        <div style="font-weight: bold; font-size: 11px; text-transform: uppercase;">CRITICAL CARE NURSING</div>
+                        <div style="font-size: 9px; color: #666; margin: 8px 0; text-transform: uppercase;">WORK-STUDY PROGRAMME</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="program-type-badge">70% COMPLETE</div>
+                            <button class="btn btn-primary" style="padding: 8px 12px; font-size: 9px;">CONTINUE</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 30px; border: 1px solid #000;">
+                    <div style="background: #f8f8f8; padding: 20px; text-align: center; border-right: 1px solid #000;">
+                        <div style="font-size: 18px; font-weight: bold;">12</div>
+                        <div style="font-size: 9px; text-transform: uppercase;">COURSES</div>
+                    </div>
+                    <div style="background: #f8f8f8; padding: 20px; text-align: center;">
+                        <div style="font-size: 18px; font-weight: bold;">92%</div>
+                        <div style="font-size: 9px; text-transform: uppercase;">APPROVAL RATE</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn btn-outline" style="width: 100%;">VIEW FULL DASHBOARD</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary Section -->
+        <div style="background: #000; color: #fff; padding: 60px; margin-top: 60px; text-align: center;">
+            <h2 style="color: #fff; border: none; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 2px;">AI CURRICULUM BUILDER</h2>
+            <h3 style="color: #fff; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; font-weight: normal;">COMPLETE UI/UX JOURNEY SUMMARY</h3>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1px; margin: 40px 0; border: 1px solid #fff;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-right: 1px solid #fff;">
+                    <div style="font-weight: bold; text-transform: uppercase;">6-PHASE JOURNEY</div>
+                    <div style="font-size: 11px; margin-top: 8px; text-transform: uppercase;">FOUNDATION → EXPORT</div>
+                    <div style="font-size: 9px; margin-top: 5px; text-transform: uppercase; opacity: 0.8;">MODULAR COURSE CREATION</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-right: 1px solid #fff;">
+                    <div style="font-weight: bold; text-transform: uppercase;">NP SCHOOLS (CET & PET)</div>
+                    <div style="font-size: 11px; margin-top: 8px; text-transform: uppercase;">ALIGNED TO ALL NP SCHOOLS</div>
+                    <div style="font-size: 9px; margin-top: 5px; text-transform: uppercase; opacity: 0.8;">UNIVERSAL FRAMEWORK FOR CET & PET CURRICULA</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-right: 1px solid #fff;">
+                    <div style="font-weight: bold; text-transform: uppercase;">RESPONSIVE UI</div>
+                    <div style="font-size: 11px; margin-top: 8px; text-transform: uppercase;">DESKTOP + MOBILE</div>
+                    <div style="font-size: 9px; margin-top: 5px; text-transform: uppercase; opacity: 0.8;">OPTIMIZED FOR STAFF AND LEARNERS</div>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px;">
+                    <div style="font-weight: bold; text-transform: uppercase;">AI-POWERED</div>
+                    <div style="font-size: 11px; margin-top: 8px; text-transform: uppercase;">SMART RECOMMENDATIONS</div>
+                    <div style="font-size: 9px; margin-top: 5px; text-transform: uppercase; opacity: 0.8;">AI-ASSISTED CONTENT MAPPING</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: 40px;">
+                <p style="font-size: 14px; margin-bottom: 15px; text-transform: uppercase;">WIREFRAME MOCKUP: AI CURRICULUM BUILDER (FOR DISCUSSION)</p>
+                <p style="opacity: 0.8; font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">DRAFT WIREFRAMES COVERING THE MAIN USER FLOW</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple interactivity for demonstration
+        document.addEventListener('DOMContentLoaded', function() {
+            // Nav pill switching
+            document.querySelectorAll('.nav-pill').forEach(pill => {
+                pill.addEventListener('click', function() {
+                    this.parentNode.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Template card hover effects
+            document.querySelectorAll('.template-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.background = '#f8f8f8';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.background = '#fff';
+                });
+            });
+
+            // Button click effects
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
