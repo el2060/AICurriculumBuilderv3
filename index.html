@@ -197,6 +197,12 @@
             background: #000;
             color: #fff;
         }
+
+        .btn-updated {
+            padding: 6px 12px;
+            font-size: 9px;
+            letter-spacing: 0.5px;
+        }
         
         .progress-bar {
             width: 100%;
@@ -648,15 +654,22 @@
             DRAFT EARLY-STAGE CONCEPT | INTERNAL PREPARATION | PRE-ENGAGEMENT WITH AWS
         </div>
 
+        <div style="font-size: 11px; color: #666; text-transform: uppercase; margin-bottom: 20px; text-align: center;">
+            THIS IS A CURRICULUM DESIGN WORKSPACE WITH AI ASSISTANCE FOR STRUCTURING, ALIGNING, AND DRAFTING COURSES ACROSS SHORT COURSES, PET, CET, AND PROGRAMMES.
+        </div>
+
         <!-- Screen 1: Dashboard Landing -->
         <div class="wireframe">
             <h2>DASHBOARD LANDING PAGE</h2>
             <div class="header">
                 <div class="logo">AI CURRICULUM BUILDER - NGEE ANN POLYTECHNIC</div>
-                <div class="user-info">
-                    <span>NOTIFICATIONS</span>
-                    <span>SETTINGS</span>
-                    <span>DR. CLARISSA LEE</span>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <div class="user-info">
+                        <span>NOTIFICATIONS</span>
+                        <span>SETTINGS</span>
+                        <span>DR. CLARISSA LEE</span>
+                    </div>
+                    <button id="updatedAtBtn" class="btn btn-outline btn-updated">UPDATED AS AT --</button>
                 </div>
             </div>
 
@@ -667,22 +680,15 @@
 
             <div class="ai-suggestions">
                 <h4>AI SMART START RECOMMENDATIONS <span class="ai-indicator">POWERED BY AI</span></h4>
-                <p style="margin-bottom: 15px;">BASED ON YOUR PROFILE & TEACHING HISTORY:</p>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <p style="margin-bottom: 15px;">BASED ON YOUR PROFILE & TEACHING HISTORY (PERSONALIZATION ROADMAP):</p>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
                     <div>
                         <strong>SUGGESTED FOR YOU:</strong>
                         <ul style="margin-top: 10px;">
                             <li>REFRESH "BASIC NURSING SKILLS" (2019 VERSION)</li>
                             <li>CREATE "ADVANCED WOUND CARE" MODULE</li>
                             <li>UPDATE "INFECTION CONTROL" WITH COVID PROTOCOLS</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong>TRENDING IN HEALTH SCIENCES:</strong>
-                        <ul style="margin-top: 10px;">
-                            <li>MENTAL HEALTH FIRST AID CERTIFICATION</li>
-                            <li>DIGITAL HEALTH LITERACY MODULES</li>
-                            <li>INTERPROFESSIONAL COLLABORATION TRAINING</li>
+                            <li style="opacity: 0.6;">TRENDING ITEMS (PHASE 2)</li>
                         </ul>
                     </div>
                 </div>
@@ -715,8 +721,8 @@
                             <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px;">WORK-STUDY PROGRAMME | LAST EDITED: 2 DAYS AGO</div>
                         </div>
                         <div style="display: flex; gap: 15px; align-items: center;">
-                            <div class="program-type-badge">70% COMPLETE</div>
-                            <button class="btn btn-primary">CONTINUE</button>
+                            <div class="program-type-badge">DRAFT – LEARNING OUTCOMES ADDED</div>
+                            <button class="btn btn-primary">VIEW NEXT STEP</button>
                         </div>
                     </div>
                 </div>
@@ -724,11 +730,11 @@
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div>
                             <strong>DIPLOMA IN CYBERSECURITY</strong>
-                            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px;">FULL-TIME DIPLOMA | SUBMITTED: 15 OCT 2025</div>
+                            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-top: 5px;">FULL-TIME DIPLOMA | LAST UPDATED: 15 OCT 2025</div>
                         </div>
                         <div style="display: flex; gap: 15px; align-items: center;">
-                            <div style="background: #000; color: #fff; padding: 4px 8px; font-size: 9px; text-transform: uppercase;">SUBMITTED</div>
-                            <button class="btn btn-secondary">VIEW</button>
+                            <div style="background: #000; color: #fff; padding: 4px 8px; font-size: 9px; text-transform: uppercase;">DRAFT – ASSESSMENT PENDING</div>
+                            <button class="btn btn-secondary">VIEW NEXT STEP</button>
                         </div>
                     </div>
                 </div>
@@ -736,20 +742,12 @@
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number">12</div>
-                    <div>COURSES CREATED</div>
+                    <div class="stat-number">5</div>
+                    <div>DRAFTS IN PROGRESS</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">8</div>
-                    <div>APPROVED</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">6.2H</div>
-                    <div>AVG. COMPLETION TIME</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number">92%</div>
-                    <div>APPROVAL RATE</div>
+                    <div class="stat-number">3</div>
+                    <div>NEEDS INPUT</div>
                 </div>
             </div>
         </div>
@@ -761,7 +759,6 @@
             <div class="header">
                 <button class="btn btn-outline">BACK TO DASHBOARD</button>
                 <div>STEP 1 OF 6: DEFINE COURSE FOUNDATION</div>
-                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 10-15 MINUTES</div>
             </div>
 
             <div class="progress-bar">
@@ -791,7 +788,7 @@
                 </div>
                 <div class="wizard-step">
                     <div class="step-circle">6</div>
-                    <div>REVIEW & DEPLOY</div>
+                    <div>REVIEW & EXPORT</div>
                 </div>
             </div>
 
@@ -862,7 +859,7 @@
                                 </ul>
                             </div>
                             <div>
-                                <strong>COMPLIANCE CHECKS:</strong>
+                                <strong>FRAMEWORK REFERENCES:</strong>
                                 <ul>
                                     <li>SSG HEALTH SECTOR SKILLS LOADED ✓</li>
                                     <li>NP ASSESSMENT FRAMEWORK APPLIED ✓</li>
@@ -897,7 +894,6 @@
             <div class="header">
                 <button class="btn btn-outline">BACK</button>
                 <div>STEP 2 OF 6: LEARNING DESIGN</div>
-                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 1-2 HOURS</div>
             </div>
 
             <div class="progress-bar">
@@ -907,8 +903,11 @@
             <div class="nav-pills">
                 <div class="nav-pill active">LEARNING FRAMEWORK</div>
                 <div class="nav-pill">LEARNING OUTCOMES</div>
-                <div class="nav-pill">SKILLS MAPPING</div>
+                <div class="nav-pill">SKILLS ALIGNMENT (OPTIONAL)</div>
                 <div class="nav-pill">MODULE STRUCTURE</div>
+            </div>
+            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin: -10px 0 20px;">
+                SKILLS ALIGNMENT IS OPTIONAL: VIEW MAPPINGS READ-ONLY AND FOLLOW LINKS TO EDIT REFERENCES.
             </div>
 
             <div class="form-group">
@@ -1010,7 +1009,6 @@
             <div class="header">
                 <button class="btn btn-outline">BACK</button>
                 <div>STEP 3 OF 6: MODULE BREAKDOWN</div>
-                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 45-60 MINUTES</div>
             </div>
 
             <div class="progress-bar">
@@ -1022,7 +1020,7 @@
                     <div class="form-group">
                         <label>PROGRAMME TIMELINE (25 WEEKS - WORK-STUDY PROGRAMME)</label>
                         <div style="display: flex; gap: 15px; margin-bottom: 20px;">
-                            <button class="btn ai-feature">AI OPTIMIZE SCHEDULE</button>
+                            <button class="btn ai-feature">AI SUGGEST SCHEDULE</button>
                             <button class="btn btn-outline">MANUAL ADJUSTMENT</button>
                         </div>
                         <div class="module-timeline">
@@ -1119,9 +1117,9 @@
                     <div class="validation-panel">
                         <h4>PROGRESS TRACKER <span class="ai-indicator">AI</span></h4>
                         <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
-                            <div>COURSE SETUP: 85% COMPLETE ✓</div>
-                            <div>LEARNING OUTCOMES: 75% COMPLETE <span style="opacity: 0.7;">IN PROGRESS</span></div>
-                            <div style="opacity: 0.5;">MODULE STRUCTURE: 0% COMPLETE <span style="opacity: 0.7;">NEXT</span></div>
+                            <div>COURSE SETUP: DRAFT - SETUP DONE</div>
+                            <div>LEARNING OUTCOMES: DRAFT - OUTCOMES ADDED <span style="opacity: 0.7;">NEXT: TUNE LEVELS</span></div>
+                            <div style="opacity: 0.5;">MODULE STRUCTURE: DRAFT - ASSESSMENT PENDING <span style="opacity: 0.7;">NEXT</span></div>
                             <div style="margin-top: 15px; padding-top: 10px; border-top: 1px solid #333;">
                                 <strong>NEXT STEPS:</strong>
                                 <div style="margin-top: 8px;">1. FINALIZE LEARNING OUTCOMES (2 MORE NEEDED)</div>
@@ -1146,7 +1144,6 @@
             <div class="header">
                 <button class="btn btn-outline">BACK</button>
                 <div>STEP 4 OF 6: ASSESSMENT DESIGN</div>
-                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 45-60 MINUTES</div>
             </div>
 
             <div class="progress-bar">
@@ -1163,7 +1160,7 @@
                             <option>60% CA + 40% FINAL EXAM</option>
                             <option>CUSTOM WEIGHTAGE</option>
                         </select>
-                        <button class="btn ai-feature" style="margin-top: 10px;">AI OPTIMIZE WEIGHTAGE</button>
+                        <button class="btn ai-feature" style="margin-top: 10px;">AI SUGGEST WEIGHTAGE</button>
                     </div>
 
                     <div class="form-group">
@@ -1275,12 +1272,12 @@
                     </div>
 
                     <div class="validation-panel">
-                        <h4>AI VALIDATION STATUS <span class="ai-indicator">AI</span></h4>
+                        <h4>AI ALIGNMENT CHECK <span class="ai-indicator">AI-CHECKED</span></h4>
                         <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
-                            <div>NP ASSESSMENT FRAMEWORK 2024 COMPLIANT <span class="ai-highlight">AI VERIFIED</span></div>
-                            <div>ALL LEARNING OUTCOMES ASSESSED <span class="ai-highlight">AI VERIFIED</span></div>
-                            <div>APPROPRIATE FOR WSP STRUCTURE <span class="ai-highlight">AI VERIFIED</span></div>
-                            <div>HEALTHCARE-SPECIFIC METHODS USED <span class="ai-highlight">AI VERIFIED</span></div>
+                            <div>NP ASSESSMENT FRAMEWORK REFERENCES <span class="ai-highlight">AI-CHECKED</span></div>
+                            <div>LEARNING OUTCOMES COVERED <span class="ai-highlight">NO MAJOR GAPS DETECTED</span></div>
+                            <div>WSP STRUCTURE NOTED <span class="ai-highlight">GAPS FLAGGED: PRACTICUM DEPTH</span></div>
+                            <div>METHODS REVIEWED <span class="ai-highlight">ALIGNMENT SUMMARY READY</span></div>
                         </div>
                     </div>
                 </div>
@@ -1451,14 +1448,14 @@
             </div>
         </div>
 
-        <!-- Screen 7: Validation & Export -->
+        <!-- Screen 7: Review & Export -->
         <div class="wireframe">
-            <h2>PHASE 6: VALIDATION & EXPORT</h2>
+            <h2>PHASE 6: REVIEW & EXPORT</h2>
+            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-bottom: 10px;">GENERATE & EXPORT (GROUPED)</div>
             
             <div class="header">
                 <button class="btn btn-outline">BACK</button>
-                <div>STEP 6 OF 6: VALIDATION & EXPORT</div>
-                <div style="font-size: 10px; color: #666; text-transform: uppercase;">EST. 30 MINUTES</div>
+                <div>STEP 6 OF 6: REVIEW & EXPORT</div>
             </div>
 
             <div class="progress-bar">
@@ -1468,25 +1465,23 @@
             <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 40px;">
                 <div>
                     <div class="validation-panel">
-                        <h4>AI COMPREHENSIVE VALIDATION RESULTS <span class="ai-indicator">AI POWERED</span></h4>
+                        <h4>AI ALIGNMENT SUMMARY <span class="ai-indicator">AI-CHECKED</span></h4>
                         <div style="margin-top: 20px;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
                                 <div>
-                                    <strong>FRAMEWORK COMPLIANCE:</strong>
+                                    <strong>FRAMEWORK REFERENCES:</strong>
                                     <div style="margin-top: 15px; font-size: 11px; text-transform: uppercase;">
-                                        <div>NP ASSESSMENT FRAMEWORK 2024 <span class="ai-highlight">AI VERIFIED</span></div>
-                                        <div>SSG SKILLS FRAMEWORK (HEALTH SECTOR) <span class="ai-highlight">AI VERIFIED</span></div>
-                                        <div>MOE CURRICULUM GUIDELINES <span class="ai-highlight">AI VERIFIED</span></div>
-                                        <div>WSP REQUIREMENTS (70:30 RATIO) <span class="ai-highlight">AI VERIFIED</span></div>
+                                        <div>NP ASSESSMENT FRAMEWORK <span class="ai-highlight">AI-CHECKED</span></div>
+                                        <div>SSG SKILLS FRAMEWORK (HEALTH) <span class="ai-highlight">AI-CHECKED</span></div>
+                                        <div>WSP (70:30) REFERENCES <span class="ai-highlight">AI-CHECKED</span></div>
                                     </div>
                                 </div>
                                 <div>
-                                    <strong>AI QUALITY ANALYSIS:</strong>
+                                    <strong>HIGHLIGHTS & GAPS:</strong>
                                     <div style="margin-top: 15px; font-size: 11px; text-transform: uppercase;">
-                                        <div>LEARNING OUTCOME ALIGNMENT <span class="ai-highlight">95% MATCH</span></div>
-                                        <div>ASSESSMENT VALIDITY <span class="ai-highlight">EXCELLENT</span></div>
-                                        <div>CONTENT COMPLETENESS <span class="ai-highlight">100%</span></div>
-                                        <div style="color: #666;">MINOR FORMATTING ISSUES <span class="ai-highlight">AI DETECTED</span></div>
+                                        <div>ALIGNMENT SUMMARY: NO MAJOR GAPS DETECTED</div>
+                                        <div>GAPS FLAGGED: ASSESSMENT MAPPING TO LO4-LO5</div>
+                                        <div>NOTE: MINOR FORMATTING CLEANUP</div>
                                     </div>
                                 </div>
                             </div>
@@ -1518,13 +1513,13 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <strong>QUALITY METRICS:</strong>
+                                    <strong>ALIGNMENT HIGHLIGHTS:</strong>
                                     <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
-                                        <div>LEARNING OUTCOMES: 9</div>
+                                        <div>LEARNING OUTCOMES: 9 COVERED</div>
                                         <div>SSG SKILLS: 15 MAPPED</div>
-                                        <div>VALIDATION SCORE: 95%</div>
-                                        <div>COMPLIANCE: EXCELLENT</div>
-                                        <div>TIME SAVED: 38 HOURS</div>
+                                        <div>AI CHECK: NO MAJOR GAPS DETECTED</div>
+                                        <div>GAPS FLAGGED: LO4-LO5 ASSESSMENT DEPTH</div>
+                                        <div>READY FOR SME REVIEW</div>
                                     </div>
                                 </div>
                             </div>
@@ -1553,7 +1548,7 @@
                             <div class="export-card">
                                 <strong>EXECUTIVE SUMMARY</strong>
                                 <div style="font-size: 10px; color: #666; margin: 15px 0; text-transform: uppercase;">
-                                    HIGH-LEVEL OVERVIEW FOR STAKEHOLDER REVIEW AND APPROVAL
+                                    HIGH-LEVEL OVERVIEW FOR STAKEHOLDER DISCUSSION
                                 </div>
                                 <button class="btn btn-primary">GENERATE PDF</button>
                             </div>
@@ -1567,6 +1562,15 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="form-group">
+                        <label>QUICK VARIANTS</label>
+                        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <button class="btn btn-outline">CREATE PET VERSION</button>
+                            <button class="btn btn-outline">CREATE CET SHORT COURSE</button>
+                            <button class="btn btn-outline">CREATE WSP VARIANT</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
@@ -1574,32 +1578,35 @@
                         <h4>AI DEVELOPMENT SUMMARY <span class="ai-indicator">AI TRACKED</span></h4>
                         <div style="margin: 20px 0; font-size: 11px; text-transform: uppercase;">
                             <div style="display: flex; justify-content: space-between; margin: 12px 0;">
-                                <span>TOTAL TIME SPENT:</span>
-                                <strong>4.2 HOURS</strong>
+                                <span>WORK SESSIONS:</span>
+                                <strong>3</strong>
+                            </div>
+                            <details style="margin: 12px 0; font-size: 10px; text-transform: uppercase; letter-spacing: 0.5px;">
+                                <summary style="cursor: pointer;">AI SUMMARY</summary>
+                                <div style="display: flex; justify-content: space-between; margin-top: 8px;">
+                                    <span>AI SUGGESTIONS USED:</span>
+                                    <strong>23 APPLIED</strong>
+                                </div>
+                            </details>
+                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
+                                <span>ALIGNMENT SUMMARY:</span>
+                                <strong>NO MAJOR GAPS DETECTED</strong>
                             </div>
                             <div style="display: flex; justify-content: space-between; margin: 12px 0;">
-                                <span>TIME SAVED VS MANUAL:</span>
-                                <strong>38 HOURS (90%) <span class="ai-highlight">AI ACCELERATED</span></strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
-                                <span>AI SUGGESTIONS USED:</span>
-                                <strong>23 OF 31 (74%) <span class="ai-highlight">AI ASSISTED</span></strong>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; margin: 12px 0;">
-                                <span>VALIDATION SCORE:</span>
-                                <strong>95% <span class="ai-highlight">AI VALIDATED</span></strong>
+                                <span>GAPS FLAGGED:</span>
+                                <strong>ASSESSMENT DEPTH FOR LO4-LO5</strong>
                             </div>
                         </div>
                     </div>
 
                     <div class="validation-panel">
-                        <h4>QUALITY INDICATORS</h4>
+                        <h4>CHECKPOINTS</h4>
                         <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
-                            <div>EXCEEDS NP QUALITY STANDARDS</div>
-                            <div>INDUSTRY-ALIGNED COMPETENCIES</div>
-                            <div>STUDENT-CENTERED DESIGN</div>
-                            <div>ASSESSMENT VALIDITY CONFIRMED</div>
-                            <div>WORKPLACE INTEGRATION OPTIMAL</div>
+                            <div>STRUCTURE READY FOR REVIEW</div>
+                            <div>ALIGNMENT HIGHLIGHTS LOGGED</div>
+                            <div>GAPS FLAGGED FOR SME INPUT</div>
+                            <div>ASSESSMENT LINKS TO OUTCOMES</div>
+                            <div>EXPORT OPTIONS CONFIGURED</div>
                         </div>
                     </div>
                 </div>
@@ -1607,8 +1614,8 @@
 
             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 40px; padding: 30px; background: #f8f8f8; border: 1px solid #000;">
                 <div>
-                    <strong>CURRICULUM VALIDATION COMPLETE</strong>
-                    <div style="font-size: 11px; color: #666; text-transform: uppercase; margin-top: 8px;">ADVANCED DIPLOMA IN CRITICAL CARE NURSING IS READY FOR GENERATION</div>
+                    <strong>REVIEW READY FOR HANDOFF</strong>
+                    <div style="font-size: 11px; color: #666; text-transform: uppercase; margin-top: 8px;">ADVANCED DIPLOMA IN CRITICAL CARE NURSING READY FOR GENERATION</div>
                 </div>
                 <div style="display: flex; gap: 15px;">
                     <button class="btn btn-secondary">SAVE DRAFT</button>
@@ -1619,10 +1626,11 @@
 
         <!-- Screen 8: Final Curriculum Generation -->
         <div class="wireframe">
-            <h2>PHASE 6: CURRICULUM GENERATION & EXPORT</h2>
+            <h2>PHASE 7: CURRICULUM GENERATION & EXPORT</h2>
+            <div style="font-size: 10px; color: #666; text-transform: uppercase; margin-bottom: 10px;">GENERATE & EXPORT (GROUPED)</div>
             
             <div class="header">
-                <button class="btn btn-outline">BACK TO VALIDATION</button>
+                <button class="btn btn-outline">BACK TO REVIEW</button>
                 <div>FINAL STEP: COMPLETE CURRICULUM PACKAGE</div>
                 <div style="font-size: 10px; color: #666; text-transform: uppercase;">GENERATE ALL DOCUMENTS</div>
             </div>
@@ -1639,11 +1647,11 @@
                         </div>
                     </div>
                     <div>
-                        <strong>COMPLIANCE:</strong>
+                        <strong>FRAMEWORK REFERENCES:</strong>
                         <div style="margin-top: 10px; font-size: 11px; text-transform: uppercase;">
-                            <div>NP STANDARDS ✓</div>
-                            <div>SSG FRAMEWORKS ✓</div>
-                            <div>WSP REQUIREMENTS ✓</div>
+                            <div>NP STANDARDS REFERENCED ✓</div>
+                            <div>SSG FRAMEWORKS REFERENCED ✓</div>
+                            <div>WSP REFERENCES NOTED ✓</div>
                         </div>
                     </div>
                     <div>
@@ -1727,12 +1735,12 @@
                     </div>
 
                     <div class="validation-panel">
-                        <h4>FINAL VALIDATION</h4>
+                        <h4>FINAL REVIEW</h4>
                         <div style="font-size: 11px; margin-top: 15px; text-transform: uppercase;">
-                            <div>LEARNING OUTCOMES COMPLETE ✓</div>
-                            <div>ASSESSMENTS ALIGNED ✓</div>
-                            <div>MODULES STRUCTURED ✓</div>
-                            <div>STANDARDS COMPLIANT ✓</div>
+                            <div>ALIGNMENT SUMMARY: AI-CHECKED</div>
+                            <div>GAPS FLAGGED: ASSESSMENT DEPTH</div>
+                            <div>SME INPUT: LO4-LO5 TARGETED</div>
+                            <div>EXPORT OPTIONS: READY</div>
                         </div>
                     </div>
 
@@ -1748,7 +1756,7 @@
             </div>
 
             <div style="display: flex; justify-content: space-between; margin-top: 40px;">
-                <button class="btn btn-secondary">PREVIOUS: VALIDATION</button>
+                <button class="btn btn-secondary">PREVIOUS: REVIEW</button>
                 <button class="btn btn-primary">COMPLETE CURRICULUM</button>
             </div>
         </div>
@@ -1788,20 +1796,20 @@
                         <div style="font-weight: bold; font-size: 11px; text-transform: uppercase;">CRITICAL CARE NURSING</div>
                         <div style="font-size: 9px; color: #666; margin: 8px 0; text-transform: uppercase;">WORK-STUDY PROGRAMME</div>
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-                            <div class="program-type-badge">70% COMPLETE</div>
-                            <button class="btn btn-primary" style="padding: 8px 12px; font-size: 9px;">CONTINUE</button>
+                            <div class="program-type-badge">DRAFT - OUTCOMES ADDED</div>
+                            <button class="btn btn-primary" style="padding: 8px 12px; font-size: 9px;">VIEW NEXT STEP</button>
                         </div>
                     </div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 30px; border: 1px solid #000;">
                     <div style="background: #f8f8f8; padding: 20px; text-align: center; border-right: 1px solid #000;">
-                        <div style="font-size: 18px; font-weight: bold;">12</div>
-                        <div style="font-size: 9px; text-transform: uppercase;">COURSES</div>
+                        <div style="font-size: 18px; font-weight: bold;">4</div>
+                        <div style="font-size: 9px; text-transform: uppercase;">RECENTLY UPDATED</div>
                     </div>
                     <div style="background: #f8f8f8; padding: 20px; text-align: center;">
-                        <div style="font-size: 18px; font-weight: bold;">92%</div>
-                        <div style="font-size: 9px; text-transform: uppercase;">APPROVAL RATE</div>
+                        <div style="font-size: 18px; font-weight: bold;">5</div>
+                        <div style="font-size: 9px; text-transform: uppercase;">ACTIVE DRAFTS</div>
                     </div>
                 </div>
 
@@ -1878,6 +1886,18 @@
                     }, 100);
                 });
             });
+
+            // Set "updated as at" button to current date
+            const updatedBtn = document.getElementById('updatedAtBtn');
+            if (updatedBtn) {
+                const today = new Date();
+                const formatted = today.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }).toUpperCase();
+                updatedBtn.textContent = `UPDATED AS AT ${formatted}`;
+            }
         });
     </script>
 </body>
