@@ -17,6 +17,50 @@ interface GeneratedContent {
   assessments?: string;
 }
 
+// Sample modules for quick testing
+const SAMPLE_MODULES: Record<string, ModuleDesignFormData> = {
+  'web-dev': {
+    moduleName: 'Web Application Development',
+    moduleNumber: 2103,
+    duration: '6 weeks',
+    targetAudience: 'Year 2 IT Diploma Students',
+    prerequisites: 'Programming Fundamentals, Database Basics',
+    learningOutcomes: 'Design and develop full-stack web applications using modern frameworks. Implement secure user authentication and authorization. Deploy applications to cloud platforms. Apply responsive design principles for mobile compatibility.'
+  },
+  'healthcare': {
+    moduleName: 'Healthcare Information Management',
+    moduleNumber: 2205,
+    duration: '4 weeks',
+    targetAudience: 'Year 2 Health Sciences Students',
+    prerequisites: 'Health Sciences Fundamentals, Basic IT Skills',
+    learningOutcomes: 'Manage patient records using healthcare information systems. Ensure PDPA compliance in health data handling. Analyze health data for clinical decision-making. Implement data security protocols for sensitive health information.'
+  },
+  'event-mgmt': {
+    moduleName: 'Event Management & Operations',
+    moduleNumber: 2308,
+    duration: '5 weeks',
+    targetAudience: 'Year 2 Hospitality Management Students',
+    prerequisites: 'Service Management Fundamentals',
+    learningOutcomes: 'Plan and execute events from concept to completion. Manage vendor relationships and budgets. Apply customer service excellence in event contexts. Use event management software for planning and coordination.'
+  },
+  'business': {
+    moduleName: 'Business Fundamentals',
+    moduleNumber: 1101,
+    duration: '4 weeks',
+    targetAudience: 'Year 1 Business Diploma Students',
+    prerequisites: 'None',
+    learningOutcomes: 'Understand core business concepts and organizational structures. Analyze business environments and competitive strategies. Apply ethical decision-making in business contexts. Identify entrepreneurial opportunities in markets.'
+  },
+  'engineering': {
+    moduleName: 'Advanced CAD & Design',
+    moduleNumber: 2101,
+    duration: '6 weeks',
+    targetAudience: 'Year 2 Engineering Diploma Students',
+    prerequisites: 'Basic CAD Skills, Technical Drawing',
+    learningOutcomes: 'Design complex mechanical systems using industry-standard CAD software. Apply design principles and optimization techniques. Conduct stress analysis and simulations. Generate manufacturing-ready technical drawings.'
+  }
+};
+
 export const ModuleDesigner: React.FC<{ onClose: () => void; onSave?: (data: any) => void }> = ({ 
   onClose, 
   onSave 
@@ -39,6 +83,15 @@ export const ModuleDesigner: React.FC<{ onClose: () => void; onSave?: (data: any
       ...prev,
       [name]: name === 'moduleNumber' ? parseInt(value) : value
     }));
+  };
+
+  const loadSample = (sampleKey: string) => {
+    const sample = SAMPLE_MODULES[sampleKey];
+    if (sample) {
+      setFormData(sample);
+      setGeneratedContent({});
+      setActiveTab('outline');
+    }
   };
 
   const isFormValid = formData.moduleName && formData.learningOutcomes && formData.duration;
@@ -171,6 +224,22 @@ Create assessment strategy including:
         <div className="border-4 border-black bg-black text-white p-8 mb-8">
           <h2 className="text-5xl font-black uppercase tracking-widest mb-2">MODULE DESIGNER</h2>
           <p className="text-xl uppercase tracking-wider">AI-Powered Module Curriculum Design</p>
+        </div>
+
+        {/* Sample Selection */}
+        <div className="border-4 border-gray-400 bg-blue-50 p-6 mb-8">
+          <div className="flex items-center gap-4 mb-4">
+            <div className="text-2xl">🚀</div>
+            <h3 className="text-lg font-black uppercase">Quick Start - Load a Sample Module</h3>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+            <button onClick={() => loadSample('web-dev')} className="border-2 border-blue-600 bg-white hover:bg-blue-100 p-3 text-xs font-black uppercase text-center">Web Dev (IT)</button>
+            <button onClick={() => loadSample('healthcare')} className="border-2 border-blue-600 bg-white hover:bg-blue-100 p-3 text-xs font-black uppercase text-center">Healthcare (HS)</button>
+            <button onClick={() => loadSample('event-mgmt')} className="border-2 border-blue-600 bg-white hover:bg-blue-100 p-3 text-xs font-black uppercase text-center">Events (BHM)</button>
+            <button onClick={() => loadSample('business')} className="border-2 border-blue-600 bg-white hover:bg-blue-100 p-3 text-xs font-black uppercase text-center">Business (BUS)</button>
+            <button onClick={() => loadSample('engineering')} className="border-2 border-blue-600 bg-white hover:bg-blue-100 p-3 text-xs font-black uppercase text-center">Engineering (ENG)</button>
+          </div>
+          <p className="text-xs mt-4 text-gray-600">💡 Click any sample to auto-populate the form. Then click generation buttons to see AI in action!</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
