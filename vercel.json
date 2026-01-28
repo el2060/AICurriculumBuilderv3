@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "env": {
+    "DANTE_API_KEY": "@dante_api_key"
+  },
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist"
+}

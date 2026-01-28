@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .border-6 {
+    border-width: 6px;
+  }
+  .border-8 {
+    border-width: 8px;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* BRUTALIST DESIGN - RAW, HONEST, FUNCTIONAL */
+
+.ai-badge {
+  @apply inline-block bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-wider border-2 border-black;
+}
+
+.btn-primary {
+  @apply bg-black text-white px-6 py-3 text-sm font-bold uppercase tracking-widest border-3 border-black hover:bg-gray-900 active:bg-gray-950 cursor-pointer;
+}
+
+.btn-secondary {
+  @apply bg-white text-black px-6 py-3 text-sm font-bold uppercase tracking-widest border-3 border-black hover:bg-gray-100 cursor-pointer;
+}
+
+.card-bordered {
+  @apply border-3 border-black bg-white p-6;
+}
+
+.section-title {
+  @apply text-3xl font-black uppercase tracking-widest border-b-4 border-black pb-4 mb-8;
+}
+
+.ai-section {
+  @apply bg-black text-white p-8 border-4 border-black;
+}
+
+.ai-section h4 {
+  @apply font-black uppercase tracking-widest mb-4 text-2xl;
+}
+
+.ai-section li {
+  @apply py-2 text-sm uppercase tracking-wider;
+  list-style-position: inside;
+}
+
+/* BRUTALIST FORM STYLES */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  @apply w-full border-3 border-black bg-white p-3 font-mono text-sm uppercase tracking-wider;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none border-black bg-white;
+  box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* TOGGLE SWITCH - BRUTALIST */
+.toggle-switch {
+  @apply relative inline-block w-14 h-8 cursor-pointer;
+}
+
+.toggle-switch input {
+  @apply opacity-0 w-0 h-0;
+}
+
+.toggle-slider {
+  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-white border-3 border-black transition-all;
+}
+
+.toggle-slider::before {
+  @apply absolute w-6 h-6 bg-black border-2 border-black transition-all;
+  content: '';
+  height: 22px;
+  left: 2px;
+  bottom: 2px;
+  width: 22px;
+}
+
+.toggle-switch input:checked + .toggle-slider {
+  @apply bg-black;
+}
+
+.toggle-switch input:checked + .toggle-slider::before {
+  @apply bg-white;
+  transform: translateX(28px);
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  @apply w-full h-4 bg-white border-3 border-black overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-black transition-all;
+}
+
+/* TABLE STYLES */
+table {
+  @apply w-full border-collapse;
+}
+
+table thead {
+  @apply border-b-4 border-black;
+}
+
+table th {
+  @apply bg-black text-white p-3 text-left font-black uppercase tracking-widest text-sm;
+}
+
+table td {
+  @apply border-b-2 border-black p-3 text-sm;
+}
+
+/* BADGES */
+.badge {
+  @apply inline-block px-3 py-1 text-xs font-black uppercase tracking-widest border-2 border-black;
+}
+
+.badge-dark {
+  @apply bg-black text-white;
+}
+
+.badge-light {
+  @apply bg-white text-black;
+}
+
+.badge-success {
+  @apply bg-white text-black border-2 border-black;
+}
+
+.badge-warning {
+  @apply bg-white text-black border-2 border-black;
+}
+
+.badge-info {
+  @apply bg-white text-black border-2 border-black;
+}
+
+/* DIVIDER */
+.divider {
+  @apply border-b-4 border-black my-6;
+}
+
+/* GRID LINES */
+.grid-lines {
+  @apply border-2 border-black;
+}
