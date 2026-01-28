@@ -198,7 +198,7 @@ Create assessment strategy including:
                   <input
                     type="text"
                     name="moduleName"
-                    placeholder="e.g., React Fundamentals"
+                    placeholder="e.g., Web Application Development"
                     value={formData.moduleName}
                     onChange={handleInputChange}
                     className="w-full border-2 border-black p-3"
@@ -227,7 +227,7 @@ Create assessment strategy including:
                   <input
                     type="text"
                     name="targetAudience"
-                    placeholder="e.g., Beginners, Advanced"
+                    placeholder="e.g., Year 2 IT Diploma Students"
                     value={formData.targetAudience}
                     onChange={handleInputChange}
                     className="w-full border-2 border-black p-3"
@@ -258,7 +258,7 @@ Create assessment strategy including:
               </div>
               <textarea
                 name="learningOutcomes"
-                placeholder="Define 3-5 specific, measurable learning outcomes for this module..."
+                placeholder="Define 3-5 specific, measurable learning outcomes. Example: Students will design and deploy secure web applications. Students will implement responsive design for mobile devices. Students will apply performance optimization techniques."
                 value={formData.learningOutcomes}
                 onChange={handleInputChange}
                 rows={4}

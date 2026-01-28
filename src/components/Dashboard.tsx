@@ -108,6 +108,28 @@ export const Dashboard: React.FC<DashboardProps> = ({ onCreateNew, onDesignModul
           )}
         </div>
 
+        {/* Sample Content Info */}
+        <div className="border-4 border-gray-300 bg-gray-50 p-8 space-y-4">
+          <div className="flex items-start gap-4">
+            <div className="text-4xl">💡</div>
+            <div className="space-y-2">
+              <h4 className="text-lg font-black uppercase">First Time Using This?</h4>
+              <p className="text-sm font-bold">
+                Try sample modules for NP DIP programs. See examples for:
+              </p>
+              <div className="grid grid-cols-2 gap-2 text-xs">
+                <div>✓ Web Application Development (IT)</div>
+                <div>✓ Healthcare Information Management (HS)</div>
+                <div>✓ Event Management (BHM)</div>
+                <div>✓ Engineering Design (ENG)</div>
+              </div>
+              <p className="text-xs text-gray-600 mt-2">
+                📖 <span className="font-bold">View EXAMPLES_NP_DIP.md</span> for complete sample content with inputs and expected AI outputs
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Final CTA */}
         <div className="flex justify-center">
           <button 
