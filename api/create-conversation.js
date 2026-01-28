@@ -4,7 +4,6 @@
  */
 
 const API_KEY = process.env.DANTE_API_KEY;
-const KB_ID = process.env.DANTE_KB_ID || '490b0d73-4800-441d-94bf-04ffcefb8650';
 const DANTE_BASE_URL = process.env.DANTE_BASE_URL || 'https://api-v2.dante-ai.com';
 
 // Validate environment variables
@@ -29,8 +28,8 @@ export default async (req, res) => {
   }
 
   try {
-    // MODE A: With Knowledge Base
-    const endpoint = `${DANTE_BASE_URL}/conversations?kb_id=${KB_ID}&name=AI%20Session`;
+    // Standard Dante AI conversation endpoint (no knowledge base)
+    const endpoint = `${DANTE_BASE_URL}/conversations`;
 
     const response = await fetch(endpoint, {
       method: 'POST',
