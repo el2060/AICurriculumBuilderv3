@@ -4,6 +4,9 @@ interface FormData {
   curriculumName: string;
   curriculumType: string;
   description: string;
+  duration: string;
+  numberOfModules: string;
+  learningOutcomes: string;
   modules: string;
   assessmentMethods: string;
   passMark: string;
@@ -19,6 +22,9 @@ const SAMPLE_CURRICULUMS: Record<string, FormData> = {
     curriculumName: 'Diploma in Business Studies',
     curriculumType: 'Full Diploma',
     description: 'Comprehensive 2-year business education covering management, finance, marketing, and entrepreneurship aligned with industry standards and SkillsFuture framework.',
+    duration: '80',
+    numberOfModules: '6',
+    learningOutcomes: 'Students will understand core business concepts and organizational structures. Students will analyze financial statements and make business decisions. Students will develop marketing strategies for products and services. Students will apply entrepreneurial thinking to identify opportunities.',
     modules: 'DIP-BUS-1101: Business Fundamentals (5 credits)\nDIP-BUS-1102: Financial Accounting (5 credits)\nDIP-BUS-2201: Marketing Management (5 credits)\nDIP-BUS-2202: Strategic Management (5 credits)\nDIP-BUS-2301: Entrepreneurship (5 credits)\nDIP-BUS-2302: Business Capstone Project (10 credits)',
     assessmentMethods: 'Continuous Assessment (40%): Assignments, Projects, Class Participation\nMidterm Exam (15%): Mid-semester evaluation\nFinal Exam (35%): Comprehensive final assessment\nCapstone Project (10%): Industry-relevant business project',
     passMark: '50'
@@ -27,6 +33,9 @@ const SAMPLE_CURRICULUMS: Record<string, FormData> = {
     curriculumName: 'Diploma in Information Technology',
     curriculumType: 'Full Diploma',
     description: 'Industry-focused 2-year IT program covering software development, networking, cybersecurity, and cloud technologies. Prepares students for professional certifications.',
+    duration: '80',
+    numberOfModules: '6',
+    learningOutcomes: 'Students will design and develop software applications using industry-standard frameworks. Students will implement secure network configurations and cybersecurity protocols. Students will manage databases and optimize query performance. Students will deploy applications to cloud platforms.',
     modules: 'DIP-IT-1101: Programming Fundamentals (5 credits)\nDIP-IT-1102: Web Development Basics (5 credits)\nDIP-IT-2201: Software Development (5 credits)\nDIP-IT-2202: Network & Cybersecurity (5 credits)\nDIP-IT-2301: Database Systems (5 credits)\nDIP-IT-2302: IT Capstone Project (10 credits)',
     assessmentMethods: 'Continuous Assessment (40%): Coding assignments, Practical labs\nQuizzes (10%): Online quizzes\nMidterm Exam (15%): Programming and theory\nFinal Project (35%): Capstone application development',
     passMark: '50'
@@ -35,6 +44,9 @@ const SAMPLE_CURRICULUMS: Record<string, FormData> = {
     curriculumName: 'Diploma in Healthcare Management',
     curriculumType: 'Full Diploma',
     description: '2-year healthcare program focusing on patient care, health information systems, quality assurance, and healthcare operations. PDPA and MOH compliant.',
+    duration: '80',
+    numberOfModules: '6',
+    learningOutcomes: 'Students will manage patient records using healthcare information systems. Students will ensure PDPA compliance in health data handling. Students will implement quality assurance protocols in healthcare settings. Students will analyze health data for clinical decision-making.',
     modules: 'DIP-HS-1101: Healthcare Fundamentals (5 credits)\nDIP-HS-1102: Patient Care Basics (5 credits)\nDIP-HS-2201: Healthcare Management (5 credits)\nDIP-HS-2202: Health Informatics (5 credits)\nDIP-HS-2301: Quality & Safety (5 credits)\nDIP-HS-2302: Clinical Practice Project (10 credits)',
     assessmentMethods: 'Continuous Assessment (40%): Clinical practice, Case studies\nQuizzes (10%): Regular knowledge checks\nMidterm Exam (15%): Theory and concepts\nFinal Project (35%): Healthcare improvement initiative',
     passMark: '50'
@@ -43,6 +55,9 @@ const SAMPLE_CURRICULUMS: Record<string, FormData> = {
     curriculumName: 'Diploma in Engineering (Mechanical)',
     curriculumType: 'Full Diploma',
     description: 'Technical 2-year engineering program emphasizing CAD, mechanical design, manufacturing, and project management. Industry-ready with hands-on labs.',
+    duration: '80',
+    numberOfModules: '6',
+    learningOutcomes: 'Students will design complex mechanical systems using industry-standard CAD software. Students will apply engineering principles to solve technical problems. Students will conduct stress analysis and simulations. Students will create manufacturing-ready technical drawings and prototypes.',
     modules: 'DIP-ENG-1101: Engineering Fundamentals (5 credits)\nDIP-ENG-1102: Technical Drawing & CAD (5 credits)\nDIP-ENG-2201: Mechanical Design (5 credits)\nDIP-ENG-2202: Manufacturing Processes (5 credits)\nDIP-ENG-2301: Control Systems (5 credits)\nDIP-ENG-2302: Engineering Project (10 credits)',
     assessmentMethods: 'Lab Work (30%): CAD drawings, simulations\nAssignments (20%): Design calculations\nMidterm Exam (15%): Theory and calculations\nFinal Project (35%): Full design & prototype development',
     passMark: '50'
@@ -51,6 +66,9 @@ const SAMPLE_CURRICULUMS: Record<string, FormData> = {
     curriculumName: 'Diploma in Hospitality Management',
     curriculumType: 'Full Diploma',
     description: '2-year hospitality program covering hotel operations, food service, event management, and customer service excellence for tourism industry.',
+    duration: '80',
+    numberOfModules: '6',
+    learningOutcomes: 'Students will plan and execute events from concept to completion. Students will manage vendor relationships and event budgets. Students will apply customer service excellence in hospitality contexts. Students will operate hotel management software and systems.',
     modules: 'DIP-BHM-1101: Hospitality Fundamentals (5 credits)\nDIP-BHM-1102: Customer Service Excellence (5 credits)\nDIP-BHM-2201: Hotel Operations (5 credits)\nDIP-BHM-2202: Food & Beverage Management (5 credits)\nDIP-BHM-2301: Event Management (5 credits)\nDIP-BHM-2302: Hospitality Capstone (10 credits)',
     assessmentMethods: 'Continuous Assessment (40%): Practical skills, Service simulations\nClass Participation (10%): Group work and discussions\nMidterm Exam (15%): Operations and theory\nFinal Project (35%): Event planning & execution',
     passMark: '50'
@@ -62,6 +80,9 @@ export const CurriculumBuilder: React.FC<CurriculumBuilderProps> = ({ onCancel }
     curriculumName: '',
     curriculumType: 'Short Course',
     description: '',
+    duration: '',
+    numberOfModules: '',
+    learningOutcomes: '',
     modules: '',
     assessmentMethods: '',
     passMark: ''
@@ -215,6 +236,9 @@ export const CurriculumBuilder: React.FC<CurriculumBuilderProps> = ({ onCancel }
               </div>
               <input
                 type="number"
+                name="duration"
+                value={formData.duration}
+                onChange={handleInputChange}
                 placeholder="e.g., 12"
                 className="border-6 border-black w-full p-6 text-2xl font-bold uppercase tracking-wide focus:bg-black focus:text-white transition-all"
               />
@@ -229,6 +253,9 @@ export const CurriculumBuilder: React.FC<CurriculumBuilderProps> = ({ onCancel }
               </div>
               <input
                 type="number"
+                name="numberOfModules"
+                value={formData.numberOfModules}
+                onChange={handleInputChange}
                 placeholder="e.g., 4"
                 className="border-6 border-black w-full p-6 text-2xl font-bold uppercase tracking-wide focus:bg-black focus:text-white transition-all"
               />
@@ -242,6 +269,9 @@ export const CurriculumBuilder: React.FC<CurriculumBuilderProps> = ({ onCancel }
                 </label>
               </div>
               <textarea
+                name="learningOutcomes"
+                value={formData.learningOutcomes}
+                onChange={handleInputChange}
                 placeholder="e.g., Students will understand core concepts..."
                 rows={5}
                 className="border-6 border-black w-full p-6 font-mono text-xl font-bold uppercase tracking-wide focus:bg-black focus:text-white transition-all"
