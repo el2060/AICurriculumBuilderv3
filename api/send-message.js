@@ -4,9 +4,14 @@
  * Body: { question, conversation_id, model }
  */
 
-const API_KEY = process.env.DANTE_API_KEY || 'DANTE_PUBLIC_eb56865f85305198c05bf4d4955d151ddb2db523705a4cc8a7d6a7581e4767b7';
-const KB_ID = '490b0d73-4800-441d-94bf-04ffcefb8650';
-const DANTE_BASE_URL = 'https://api-v2.dante-ai.com';
+const API_KEY = process.env.DANTE_API_KEY;
+const KB_ID = process.env.DANTE_KB_ID || '490b0d73-4800-441d-94bf-04ffcefb8650';
+const DANTE_BASE_URL = process.env.DANTE_BASE_URL || 'https://api-v2.dante-ai.com';
+
+// Validate environment variables
+if (!API_KEY) {
+  throw new Error('DANTE_API_KEY environment variable is not set');
+}
 
 export default async (req, res) => {
   // CORS Headers
